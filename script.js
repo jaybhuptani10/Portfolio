@@ -56,7 +56,7 @@ tl
         }
     })
     .to("#top-page",{
-        top:"-100%",
+        top:"-1000%",
         delay:1,
         duration:1.2,
         ease:"Power4.easeOut",
