@@ -1,0 +1,238 @@
+.Main{
+    width: 100%;
+    background-color: #1A202B;
+    min-height: 100vh;
+}
+.inside-class{
+    /* background-color: #273040; */
+    background-color: #4F646F;
+}
+.left{
+    width: 7%;
+    
+    
+}
+.right{
+    width: 7%;
+    
+}
+.Main .centre{
+    width: 86%;
+}
+.Left-h1{
+    transform: rotate(-90deg);
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  
+  font-weight: 500;
+  font-style: normal;
+    
+}
+.right-h2{
+    transform: rotate(90deg);
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+    
+}
+.circle{
+    z-index: 11;
+    position: absolute;
+    height: clamp(30vh, 40vw, 50vh);
+    width: clamp(40vh, 70vw, 85vh);
+    background-color: #E5EAFA;
+    border-radius: 20px;
+}
+
+.Profile-div-1{
+    border-radius: 20px;
+    height: clamp(40vh, 50vw, 55vh);
+    width: 53vw;
+   
+    background-color: #E5EAFA;
+    overflow: hidden;
+    z-index: 11;
+}
+.Profile-div-2 .boxes{
+    border-radius: 20px;
+    height: clamp(20vh, 20vw, 25vh);
+    width: 30vw;
+    z-index: 11;
+    background-color: #C6CCB2;
+}
+.texts{
+    font-size: clamp(0.7rem, 1.2vw, 2rem);
+    color: #000000;
+
+}
+.skill{
+    z-index: 11;
+    height: 2.5vh;
+    width: 2.5vh;
+
+    box-shadow: 0 0 10px 0 #000000;
+    background-color: #fff;
+     /* Adjust width and height as needed */
+  
+  border-radius: 50%;
+   /* Adjust border style, width, and color */
+  
+  
+}
+.skill-line{
+    display: flex;
+    flex-direction: column;
+    
+    gap: 30px;
+}
+.skill-head{
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  
+  font-style: normal;
+    font-size: clamp(1.5rem, 1.8vw, 2rem);
+    color: #E5EAFA;
+    font-weight: 700;
+   
+
+}
+
+
+.job-pic{
+    
+    z-index: 15;
+    width: 45vw;
+    height: 15vw;
+    border-radius: 20px;
+}
+.liti{
+    height: 0.25vh;
+    width: 7vw;
+    background-color: black;
+}
+.flip-card {
+    perspective: 1000px;
+    cursor: pointer;
+    overflow: hidden;
+    height: clamp(350px, 52vw, 53vh);
+    width: clamp(270px, 20vw, 30vw);
+    border-radius: 20px;
+    background-color: #E5EAFA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 12;
+    
+    color: #000000;
+  }
+.flip-card-inner {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    
+}
+  
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    backface-visibility: hidden;
+}
+  
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+  
+
+
+.flip-card:hover button{
+    transform: scale(1.2);
+}
+.flip-card img{
+    object-fit: cover;
+    object-position: center;
+    height: clamp(18vh, 23vw, 25vh);
+    width: 100%;
+    
+   
+  
+
+}
+.carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  .carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .flip-card {
+    width: 300px; 
+    height: 400px; 
+    perspective: 1000px;
+  }
+h3{
+    
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #000000;
+
+}
+.flip-card-front:hover h3{
+    transform: scale3d(1.1, 1.1, 1.1);
+}
+
+@media screen and (max-width: 500px){
+    .job-pic{
+       
+        margin-top: 20px;
+        width: 80vw;
+        height: 40vw;
+    }
+    .Main .centre{
+        width: 100%;
+    }
+    .left{
+        
+        z-index: 10;
+        padding: 8px;
+        left: 10px;
+        background-color: #4F646F;
+      
+        
+    }
+    .Left-h1{
+        display: none;
+    }
+    .right{
+        z-index: 10;
+        padding: 8px;
+        background-color: #4F646F;
+       
+        right: 10px;
+
+    }
+    .Profile-div-1{
+        height: clamp(30vh, 40vw, 45vh);
+        width: 83vw;
+       
+    }
+    .Profile-div-2 .boxes{
+        height: clamp(20vh, 25vw, 30vh);
+        width: 83vw;
+        
+    }
+    .flip-card{
+        width: 280px;
+    }
+}

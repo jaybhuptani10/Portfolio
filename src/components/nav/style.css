@@ -1,0 +1,54 @@
+.nav-main{
+    background-color: #3F6634;
+}
+.nav-out{
+  transform-style:preserve-3d;
+  overflow: hidden;
+  
+  
+  perspective: 2000px;
+}
+.nav-out h1{
+    color: #000;
+    text-transform:uppercase;
+    font-weight: bolder;
+    font-size: clamp(5rem, 7vw, 8rem);
+    transform: rotateY(-45deg);
+    cursor: pointer;
+    transition: 1s;
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-family:Arial, Helvetica, sans-serif;
+    
+
+}
+.nav-out h1:hover{
+    transform: rotateY(-30deg);
+    
+    -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 3px rgb(0, 0, 0);
+   
+
+}
+.nav-text h1{
+    
+    font-weight: 700;
+    font-size: clamp(3.5rem, 5vw, 6rem);
+}
+.nav-text h2{
+    font-weight: 700;
+    font-size: clamp(3rem, 4vw, 5rem);
+}
+@media screen and (max-width: 468px) {
+    .nav-out{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        align-items: center;
+    }
+    .nav-out h1{
+        transform: rotateY(-60deg);
+
+    }
+    
+}
