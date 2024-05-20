@@ -2,6 +2,7 @@ import React from "react";
 import "./home.css";
 import { motion, transform } from "framer-motion";
 import Resume from "./Jay Resume.pdf";
+
 const Left = () => {
   const variants = {
     hidden: { opacity: 0, x: -100 },

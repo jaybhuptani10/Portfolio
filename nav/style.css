@@ -1,0 +1,66 @@
+.nav-main{
+    background-color: #4801FF;
+}
+.nav-out{
+  transform-style:preserve-3d;
+  overflow: hidden;
+  
+  
+  perspective: 2000px;
+}
+.nav-out h1{
+    color: #000000;
+    text-transform:uppercase;
+    font-weight: bolder;
+    font-size: clamp(5rem, 10vw, 8rem);
+    transform: rotateY(-35deg);
+    
+    cursor: pointer;
+    transition: 1s ease-in-out;
+    
+    letter-spacing: 5px;
+    
+    font-family: "Poetsen One", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+    
+
+}
+.nav-out h1:hover{
+    transform: rotateY(-20deg);
+    
+    -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 5px rgb(255, 255, 255);
+   
+
+}
+.nav-text h1{
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+ 
+  font-style: normal;
+    font-weight: 700;
+    font-size: clamp(3.5rem, 5vw, 6rem);
+}
+.nav-text h2{
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+ 
+  font-style: normal;
+    font-weight: 700;
+    font-weight: 700;
+    font-size: clamp(3rem, 4vw, 5rem);
+}
+@media screen and (max-width: 468px) {
+    .nav-out{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        align-items: center;
+    }
+    .nav-out h1{
+        transform: rotateY(-60deg);
+
+    }
+    
+}
