@@ -10,14 +10,14 @@ const Left = () => {
   };
 
   return (
-    <div className="flex left sm:py-10 flex-col h-screen text-white items-center justify-between sm:justify-between fixed">
+    <div className="flex left sm:py-10 flex-col text-white items-center justify-between sm:justify-between fixed">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-6 h-6 text-white"
+        className="w-7 h-7  mt-6 sm:mt-0 cursor-pointer  "
       >
         <path
           strokeLinecap="round"
@@ -35,7 +35,7 @@ const Left = () => {
         initial="hidden"
         animate="visible"
         transition={{ ease: "easeOut", duration: 2, delay: 0.5 }}
-        className="cursor-pointer "
+        className="cursor-pointer mb-5 sm:mb-0 "
       >
         <a className="Resume" href={Resume} download="Jay Resume.pdf">
           RESUME

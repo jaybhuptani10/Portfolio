@@ -25,18 +25,20 @@ const Card = ({ project }) => {
       >
         <div className="flip-card-front flex flex-col items-center">
           <img src={project.Img} alt={project.Title} />
-          <h3 className="mt-2 px-5 h-12 text-xl">{project.Title}</h3>
-          <p className="mt-2 text-center  p-2 text-black">
+          <h3 className="mt-2 sm:px-0 px-5 h-10 sm:h-12 text-xl">
+            {project.Title}
+          </h3>
+          <p className="mt-4 text-center h-20   p-2 text-black">
             Stack: {project.Stack}
           </p>
           <button className="mt-4">Know More</button>
         </div>
 
         <div className="flip-card-back flex flex-col h-full justify-center items-center">
-          <p className="py-10 h-60 text-center  text-black">
+          <p className="sm:py-10 h-60 text-center  text-black">
             {project.Description}
           </p>
-          <button className="mt-4 sm:mt-6">
+          <button className="mt-5 sm:mt-6">
             <a target="_blank" href={project.link}>
               LINK
             </a>

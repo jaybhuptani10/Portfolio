@@ -40,7 +40,7 @@ const Page5 = () => {
       link: "https://airbnb-clone-1a7b7.web.app/",
     },
     {
-      Title: "Waste Management Web Application",
+      Title: "EcoEats",
       Img: IMG2,
       Stack: "React, NODE, MongoDB, Express",
       Description:

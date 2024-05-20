@@ -14,7 +14,7 @@ const Home = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <div className="Main flex relative">
-      <div className="left ">
+      <div className="left">
         <Left />
       </div>
       {navbar ? (
