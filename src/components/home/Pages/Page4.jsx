@@ -27,8 +27,8 @@ const Page4 = () => {
       </div>
       <div className="flex flex-col gap-2 ">
         <div className="mt-20 px-10 sm:px-40 gap-3 flex sm:gap-10">
-          <div className="text-left flex  sm:gap-10 items-center">
-            <h1 className="sm:w-20">DATA SCIENCE INTERN</h1>
+          <div className="text-left flex   sm:gap-10 items-center">
+            <h1 className="w-20">DATA SCIENCE INTERN</h1>
             <div className="liti"></div>
           </div>
 
@@ -54,7 +54,7 @@ const Page4 = () => {
           </div>
         </div>
         <div className="mt-20 mb-10 px-10 sm:px-40 gap-3 flex sm:gap-10">
-          <div className="text-left flex  sm:gap-10 items-center">
+          <div className="text-left flex gap-2  sm:gap-10 items-center">
             <h1 className="w-20">FRONT-END DEVELOPER</h1>
             <div className="liti"></div>
           </div>

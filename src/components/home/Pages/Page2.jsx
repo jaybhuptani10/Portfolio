@@ -4,17 +4,17 @@ const Page2 = () => {
   return (
     <div className="p-10  flex-col sm:flex-row flex  gap-5">
       <div className="Profile-div-1  flex p-10 items-center justify-center flex-col">
-        <p className="texts text-left w-90">
+        <p className=" text-r text-left w-90">
           As a third-year college student specializing in MERN stack
           development, I have crafted various projects leveraging this
           technology stack.
         </p>
-        <p className="texts text-left w-90">
+        <p className=" text-r text-left w-90">
           My hands-on experience with MongoDB, Express.js, React, and Node.js
           has equipped me with the skills necessary to develop dynamic and
           responsive web applications.
         </p>
-        <p className="texts text-left w-90">
+        <p className=" text-r text-left w-90">
           Despite being in the early stages of my academic journey, I am
           enthusiastic about further honing my expertise and contributing to
           innovative software projects
@@ -31,7 +31,7 @@ const Page2 = () => {
         </div>
         <div className="boxes flex flex-col p-10 justify-center">
           <h2 className="text-2xl texts">CONTACT DETAILS</h2>
-          <p className="flex gap-2 texts">
+          <p className="flex items-center gap-2 texts">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -48,7 +48,7 @@ const Page2 = () => {
             </svg>
             jaybhuptani1054@gmail.com
           </p>
-          <p className="flex gap-2 texts">
+          <p className="flex items-center gap-2 texts">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -65,7 +65,7 @@ const Page2 = () => {
             </svg>
             8141242093
           </p>
-          <p className="flex gap-2 texts">
+          <p className="flex items-center gap-2 texts">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

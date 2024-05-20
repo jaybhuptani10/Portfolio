@@ -66,6 +66,12 @@
     color: #000000;
 
 }
+.text-r{
+    font-size: clamp(10px, 1.2vw, 2rem);
+    color: #000000;
+
+}
+
 .skill{
     z-index: 11;
     height: 2.5vh;
@@ -158,6 +164,7 @@
 
 }
 .carousel-container {
+    z-index:21;
     width: 80%;
     margin: 0 auto;
     padding: 20px;
@@ -167,13 +174,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 0 15px;
   }
-  .carousel-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  
   .flip-card {
     width: 300px; 
     height: 400px; 
@@ -193,6 +196,20 @@ h3{
 }
 
 @media screen and (max-width: 500px){
+
+    .carousel-container{
+        
+        
+        margin: 0 20px;
+        
+    }
+    .Resume{
+        
+        padding-left: 50px;
+    }
+    .slick-slide {
+        padding: 0 5px ;
+    }
     .job-pic{
        
         margin-top: 20px;

@@ -34,9 +34,9 @@ const Left = () => {
         initial="hidden"
         animate="visible"
         transition={{ ease: "easeOut", duration: 2, delay: 0.5 }}
-        className="cursor-pointer"
+        className="cursor-pointer "
       >
-        <a href={Resume} download="Jay Resume.pdf">
+        <a className="Resume" href={Resume} download="Jay Resume.pdf">
           RESUME
         </a>
       </motion.h2>

@@ -14,7 +14,7 @@ const Card = ({ project }) => {
   }
 
   return (
-    <div className="flip-card" onClick={handleFlip}>
+    <div className="flip-card w-[100%] " onClick={handleFlip}>
       <motion.div
         className="flip-card-inner w-[100%] h-[100%]"
         initial={false}
