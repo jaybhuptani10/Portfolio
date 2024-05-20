@@ -7,6 +7,9 @@
   box-sizing: border-box;
 
 }
+html {
+  scroll-behavior: smooth;
+}
 html{
   width: 100%;
   min-height: 100vh;

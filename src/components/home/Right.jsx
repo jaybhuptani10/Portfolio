@@ -3,13 +3,21 @@ import "./home.css";
 import { useNavigate } from "react-router-dom";
 const Right = ({ navbar, setNavbar }) => {
   const navigate = useNavigate();
+  const onMenuClick = () => {
+    if (navbar) {
+      navigate("/");
+    } else {
+      navigate("/Navbar");
+    }
+    setNavbar(!navbar);
+  };
   return (
-    <div className="flex right    sm:py-10  flex-col h-screen text-white items-center justify-between fixed">
+    <div className="flex right   sm:py-10  flex-col h-screen text-white items-center justify-between fixed">
       {navbar ? (
         <svg
           className="w-10 h-10 cursor-pointer"
           onClick={() => {
-            setNavbar(!navbar);
+            onMenuClick();
           }}
           fill="none"
           viewBox="0 0 24 24"
@@ -24,7 +32,7 @@ const Right = ({ navbar, setNavbar }) => {
       ) : (
         <svg
           onClick={() => {
-            setNavbar(!navbar);
+            onMenuClick();
           }}
           setNav
           xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +49,6 @@ const Right = ({ navbar, setNavbar }) => {
           />
         </svg>
       )}
-
       <h2 className="right-h2">Page</h2>
       <div className="flex flex-col gap-2 cursor-pointer">
         <svg fill="currentColor" viewBox="0 0 16 16" height="2em" width="2em">

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import "../home.css";
 
 const Card = ({ project }) => {
-  console.log(project);
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 

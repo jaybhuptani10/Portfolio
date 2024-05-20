@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Panel from "./Panel";
 import "./style.css";
-const Navbar = () => {
+import Left from "../home/Left";
+import Right from "../home/Right";
+import { useLocation } from "react-router-dom";
+
+const Navbar = ({}) => {
+  const [navbar, setNavbar] = useState(true);
   const panelList = [
     {
       Title: "Home",
@@ -28,11 +33,22 @@ const Navbar = () => {
       link: "https://images.unsplash.com/uploads/1413222992504f1b734a6/1928e537?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
+
   return (
-    <div className="nav-main py-5 sm:py-0  sm:overflow-hidden flex flex-wrap flex-col sm:flex-row">
-      {panelList.map((panel, index) => (
-        <Panel index={index} panel={panel} />
-      ))}
+    <div className="Main flex relative">
+      <div className="left">
+        <Left />
+      </div>
+      <div className="centre">
+        <div className="nav-main py-5 sm:py-0 sm:overflow-hidden flex flex-wrap flex-col sm:flex-row">
+          {panelList.map((panel, index) => (
+            <Panel key={index} index={index} panel={panel} />
+          ))}
+        </div>
+      </div>
+      <div className="right">
+        <Right navbar={navbar} setNavbar={setNavbar} />
+      </div>
     </div>
   );
 };
