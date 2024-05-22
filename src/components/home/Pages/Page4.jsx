@@ -2,7 +2,7 @@ import React from "react";
 
 const Page4 = () => {
   return (
-    <div className="flex py-20 sm:mt-0  z-10 flex-col">
+    <div className="flex    z-10 flex-col">
       <div className="flex  flex-col sm:flex-row items-center justify-center px-20 ">
         <div className="page4-top  sm:px-20">
           <h1 className="text-5xl font-bold ">Experience.</h1>

@@ -32,6 +32,7 @@ const Home = () => {
   };
 
   useEffect(() => {
+    // Assign refs
     page1Ref.current = document.getElementById("page1");
     page2Ref.current = document.getElementById("page2");
     page3Ref.current = document.getElementById("page3");
@@ -65,22 +66,32 @@ const Home = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const pageId = entry.target.id;
-
-            if (pageId === "page1") {
-              setCurrentPage("Home");
-            } else if (pageId === "page2") {
-              setCurrentPage("About");
-            } else if (pageId === "page3") {
-              setCurrentPage("Skills");
-            } else if (pageId === "page4") {
-              setCurrentPage("Projects");
-            } else if (pageId === "page5") {
-              setCurrentPage("Contact");
+            let pageName = "Home";
+            switch (pageId) {
+              case "page1":
+                pageName = "Home";
+                break;
+              case "page2":
+                pageName = "About";
+                break;
+              case "page3":
+                pageName = "Skills";
+                break;
+              case "page4":
+                pageName = "Exerience";
+                break;
+              case "page5":
+                pageName = "Projects";
+                break;
+              default:
+                break;
             }
+            setCurrentPage(pageName);
+            console.log(`Currently on page: ${pageName}`);
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     // Observe each page
@@ -115,6 +126,7 @@ const Home = () => {
             initial="hidden"
             animate="visible"
             className="circle"
+            onClick={() => scrollToPage(page4Ref)}
             transition={{ ease: "easeOut", duration: 2 }}
           ></motion.div>
           <Page1 />
