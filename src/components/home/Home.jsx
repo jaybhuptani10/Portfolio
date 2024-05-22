@@ -14,8 +14,8 @@ import { useLocation } from "react-router-dom";
 const Home = () => {
   const location = useLocation();
   const { index } = location.state || {};
-  console.log(index);
   const [navbar, setNavbar] = useState(false);
+  const [currentPage, setCurrentPage] = useState("Home");
 
   // Refs
   const page1Ref = useRef(null);
@@ -27,12 +27,9 @@ const Home = () => {
   // Scroll function
   const scrollToPage = (ref) => {
     if (ref.current) {
-      console.log(ref.current);
       ref.current.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  // useEffect to assign refs
 
   useEffect(() => {
     page1Ref.current = document.getElementById("page1");
@@ -41,19 +38,64 @@ const Home = () => {
     page4Ref.current = document.getElementById("page4");
     page5Ref.current = document.getElementById("page5");
 
-    // Debug logs
-    if (index === 0) {
-      scrollToPage(page1Ref);
-    } else if (index === 1) {
-      scrollToPage(page2Ref);
-    } else if (index === 2) {
-      scrollToPage(page3Ref);
-    } else if (index === 3) {
-      scrollToPage(page4Ref);
-    } else if (index === 4) {
-      scrollToPage(page5Ref);
+    // Scroll to the page based on the index from location state
+    switch (index) {
+      case 0:
+        scrollToPage(page1Ref);
+        break;
+      case 1:
+        scrollToPage(page2Ref);
+        break;
+      case 2:
+        scrollToPage(page3Ref);
+        break;
+      case 3:
+        scrollToPage(page4Ref);
+        break;
+      case 4:
+        scrollToPage(page5Ref);
+        break;
+      default:
+        break;
     }
-  }, []);
+
+    // Intersection Observer to detect which page is in view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const pageId = entry.target.id;
+
+            if (pageId === "page1") {
+              setCurrentPage("Home");
+            } else if (pageId === "page2") {
+              setCurrentPage("About");
+            } else if (pageId === "page3") {
+              setCurrentPage("Skills");
+            } else if (pageId === "page4") {
+              setCurrentPage("Projects");
+            } else if (pageId === "page5") {
+              setCurrentPage("Contact");
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    // Observe each page
+    if (page1Ref.current) observer.observe(page1Ref.current);
+    if (page2Ref.current) observer.observe(page2Ref.current);
+    if (page3Ref.current) observer.observe(page3Ref.current);
+    if (page4Ref.current) observer.observe(page4Ref.current);
+    if (page5Ref.current) observer.observe(page5Ref.current);
+
+    return () => {
+      // Clean up the observer
+      observer.disconnect();
+    };
+  }, [index]);
+
   return (
     <div className="Main flex relative">
       <div className="left">
@@ -62,6 +104,7 @@ const Home = () => {
       <div className="centre">
         <div
           id="page1"
+          ref={page1Ref}
           className="sm:p-0 inside-class min-h-screen w-full flex justify-center items-center relative"
         >
           <motion.div
@@ -72,26 +115,45 @@ const Home = () => {
             initial="hidden"
             animate="visible"
             className="circle"
-            onClick={() => scrollToPage(page4Ref)}
             transition={{ ease: "easeOut", duration: 2 }}
           ></motion.div>
           <Page1 />
         </div>
-        <div id="page2" className="inside-class min-h-screen w-full">
+        <div
+          id="page2"
+          ref={page2Ref}
+          className="inside-class min-h-screen w-full"
+        >
           <Page2 />
         </div>
-        <div id="page3" className="inside-class min-h-screen w-full">
+        <div
+          id="page3"
+          ref={page3Ref}
+          className="inside-class min-h-screen w-full"
+        >
           <Page3 />
         </div>
-        <div id="page4" className="inside-class min-h-screen w-full">
+        <div
+          id="page4"
+          ref={page4Ref}
+          className="inside-class min-h-screen w-full"
+        >
           <Page4 />
         </div>
-        <div id="page5" className="inside-class min-h-screen w-full">
+        <div
+          id="page5"
+          ref={page5Ref}
+          className="inside-class min-h-screen w-full"
+        >
           <Page5 />
         </div>
       </div>
       <div className="right">
-        <Right navbar={navbar} setNavbar={setNavbar} />
+        <Right
+          navbar={navbar}
+          currentPage={currentPage}
+          setNavbar={setNavbar}
+        />
       </div>
     </div>
   );
