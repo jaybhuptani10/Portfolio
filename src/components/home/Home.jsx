@@ -9,6 +9,7 @@ import Page2 from "./Pages/Page2";
 import Page3 from "./Pages/Page3";
 import Page4 from "./Pages/Page4";
 import cursor from "./Pages/Images/cursor.png";
+import lamp from "./Pages/Images/lamp.png";
 import scrollingImage from "./Pages/Images/1.png";
 import closed from "./Pages/Images/closed.png";
 import Page5 from "./Pages/Page5";
@@ -202,6 +203,8 @@ const Home = () => {
           ref={page1Ref}
           className="sm:p-0 inside-class min-h-screen w-full flex justify-center items-center relative"
         >
+          <img className="lamp" src={lamp} alt="" />
+          <div className="light"></div>
           <motion.div
             variants={{
               hidden: { opacity: 0, y: -100 },

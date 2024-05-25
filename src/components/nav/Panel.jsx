@@ -16,7 +16,7 @@ const Panel = ({ panel, index }) => {
       animate="visible"
       variants={variants}
       transition={{ duration: 0.5, delay: 0.5 * index }}
-      className="sm:h-[33.3vh] panel h-1/3 cursor-pointer w-full sm:w-1/2 relative"
+      className="sm:h-[33.3vh] panel h-1/6 cursor-pointer w-full sm:w-1/2 relative"
     >
       <div className="absolute flex h-full w-full items-center justify-center">
         <div className="white-bg"></div>
