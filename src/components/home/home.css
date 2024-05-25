@@ -106,7 +106,7 @@
     z-index: 11;
     font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  
+  width: 80%;
   font-style: normal;
     font-size: clamp(1.4rem, 1.8vw, 2rem);
     color: #E5EAFA;

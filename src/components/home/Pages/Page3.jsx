@@ -8,9 +8,9 @@ const Page3 = () => {
       </h1>
       <div className="Skills mt-10 p-5 sm:p-10 flex gap-10 flex-wrap">
         <div className="skill-line">
-          <div className="flex gap-5 items-center">
-            <h3 className="skill-head">React Js</h3>
-            <div className="flex gap-2">
+          <div className="flex gap-5  items-center">
+            <h3 className="skill-head ">React Js</h3>
+            <div className="flex  gap-2">
               <div className="skill"></div>
               <div className="skill"></div>
               <div className="skill"></div>
@@ -18,7 +18,7 @@ const Page3 = () => {
             </div>
           </div>
           <div className="flex gap-5 items-center">
-            <h3 className="skill-head">MYSQL</h3>
+            <h3 className="skill-head w-30">MYSQL</h3>
             <div className="flex gap-2">
               <div className="skill"></div>
               <div className="skill"></div>

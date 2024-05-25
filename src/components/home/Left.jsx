@@ -2,13 +2,15 @@ import React from "react";
 import "./home.css";
 import { motion, transform } from "framer-motion";
 import Resume from "./Jay Resume.pdf";
+import { useNavigate } from "react-router-dom";
 
 const Left = () => {
+  const navigate = useNavigate();
   const variants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0 },
   };
-
+  const index = 0;
   return (
     <div className="flex left sm:py-10 flex-col text-white items-center justify-between sm:justify-between fixed">
       <svg
@@ -18,6 +20,7 @@ const Left = () => {
         strokeWidth={1.5}
         stroke="currentColor"
         className="w-7 h-7  mt-6 sm:mt-0 cursor-pointer  "
+        onClick={() => navigate("/", { state: { index } })}
       >
         <path
           strokeLinecap="round"
