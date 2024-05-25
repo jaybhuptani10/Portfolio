@@ -12,14 +12,14 @@ const Left = () => {
   };
   const index = 0;
   return (
-    <div className="flex left sm:py-10 flex-col text-white items-center justify-between sm:justify-between fixed">
+    <div className="flex left sm:py-10 flex-col dark:text-white items-center justify-between sm:justify-between fixed text-black">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-7 h-7  mt-6 sm:mt-0 cursor-pointer  "
+        className="w-7 h-7  mt-6 sm:mt-0 cursor-pointer dark:text-black "
         onClick={() => navigate("/", { state: { index } })}
       >
         <path
@@ -29,8 +29,8 @@ const Left = () => {
         />
       </svg>
       <div className="text flex flex-col gap-2">
-        <h2 className="Left-h1">Bhuptani</h2>
-        <h2 className="Left-h1">Jay</h2>
+        <h2 className="Left-h1 dark:text-black">Bhuptani</h2>
+        <h2 className="Left-h1 dark:text-black">Jay</h2>
       </div>
 
       <motion.h2
@@ -40,7 +40,11 @@ const Left = () => {
         transition={{ ease: "easeOut", duration: 2, delay: 0.5 }}
         className="cursor-pointer mb-5 sm:mb-0 "
       >
-        <a className="Resume" href={Resume} download="Jay Resume.pdf">
+        <a
+          className="Resume dark:text-black"
+          href={Resume}
+          download="Jay Resume.pdf"
+        >
           RESUME
         </a>
       </motion.h2>

@@ -10,12 +10,15 @@ import Page3 from "./Pages/Page3";
 import Page4 from "./Pages/Page4";
 import cursor from "./Pages/Images/cursor.png";
 import lamp from "./Pages/Images/lamp.png";
+import sun from "./Pages/Images/sun.png";
+import moon from "./Pages/Images/moon.png";
 import scrollingImage from "./Pages/Images/1.png";
 import closed from "./Pages/Images/closed.png";
 import Page5 from "./Pages/Page5";
 import Navbar from "../nav/Navbar";
 import { useLocation } from "react-router-dom";
 import Page6 from "./Pages/Page6";
+import Slider from "./Pages/Slider";
 
 const Home = () => {
   const location = useLocation();
@@ -26,6 +29,7 @@ const Home = () => {
   const { scrollY } = useViewportScroll();
   const [offsetY, setOffsetY] = useState(0);
   const [maxScrollHeight, setMaxScrollHeight] = useState(0);
+  const [lightMode, setLightMode] = useState(false);
 
   // Refs
   const page1Ref = useRef(null);
@@ -191,20 +195,31 @@ const Home = () => {
     hidden: { opacity: 0, y: 150 },
     visible: { opacity: 1, y: 0 },
   };
-
+  // Main
   return (
-    <div className="Main flex relative">
+    <div
+      // className={`${
+      //   lightMode ? "Main Main-light flex relative" : "Main flex relative"
+      // }`}
+      className={`${
+        !lightMode
+          ? "Main  flex relative"
+          : "dark Main Main-light flex relative"
+      } `}
+    >
       <div className="left">
-        <Left />
+        <Left lightMode={lightMode} />
       </div>
       <div className="centre">
         <div
           id="page1"
           ref={page1Ref}
-          className="sm:p-0 inside-class min-h-screen w-full flex justify-center items-center relative"
+          className="sm:p-0  inside-class min-h-screen w-full flex justify-center items-center relative dark:bg-[#EC9192]"
         >
-          <img className="lamp" src={lamp} alt="" />
-          <div className="light"></div>
+          <div className="theme-shifter">
+            <Slider setLightMode={setLightMode} />
+          </div>
+
           <motion.div
             variants={{
               hidden: { opacity: 0, y: -100 },
@@ -213,7 +228,7 @@ const Home = () => {
             initial="hidden"
             animate="visible"
             ref={motiveRef}
-            className="circle motive"
+            className="circle motive dark:bg-[#307473]"
             transition={{ ease: "easeOut", duration: 2 }}
           >
             <Page1 />
@@ -239,35 +254,35 @@ const Home = () => {
         <div
           id="page2"
           ref={page2Ref}
-          className="inside-class min-h-screen w-full"
+          className="inside-class min-h-screen w-full dark:bg-[#EC9192]"
         >
           <Page2 />
         </div>
         <div
           id="page3"
           ref={page3Ref}
-          className="inside-class min-h-screen w-full"
+          className="inside-class min-h-screen w-full dark:bg-[#EC9192]"
         >
           <Page3 />
         </div>
         <div
           id="page4"
           ref={page4Ref}
-          className="inside-class min-h-screen w-full "
+          className="inside-class min-h-screen w-full dark:bg-[#EC9192] "
         >
           <Page4 />
         </div>
         <div
           id="page5"
           ref={page5Ref}
-          className="inside-class h-[60vh] sm:h-[70vh] w-full"
+          className="inside-class h-[60vh] sm:h-[70vh] w-full dark:bg-[#EC9192]"
         >
           <Page5 />
         </div>
         <div
           id="page6"
           ref={page6Ref}
-          className="inside-class min-h-screen w-full"
+          className="inside-class min-h-screen w-full dark:bg-[#EC9192]"
         >
           <Page6 />
         </div>
@@ -281,7 +296,7 @@ const Home = () => {
       </div>
       {/* Custom Cursor */}
       <div
-        className="cursor"
+        className="cursor "
         ref={cursorRef}
         style={{
           position: "fixed",
