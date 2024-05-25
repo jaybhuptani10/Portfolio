@@ -20,6 +20,9 @@
 }
 .Main .centre{
     width: 86%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .Left-h1{
     transform: rotate(-90deg);
@@ -39,6 +42,9 @@
     
 }
 .circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 11;
     position: absolute;
     height: clamp(30vh, 40vw, 50vh);
@@ -75,6 +81,7 @@
 
 }
 
+
 .skill{
     z-index: 11;
     height: 2.5vh;
@@ -96,6 +103,7 @@
     gap: 30px;
 }
 .skill-head{
+    z-index: 11;
     font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   
@@ -121,6 +129,7 @@
     background-color: black;
 }
 .flip-card {
+    z-index: 20;
     perspective: 1000px;
     cursor: pointer;
     overflow: hidden;
@@ -151,8 +160,9 @@
     transform: rotateY(180deg);
 }
   
-
-
+.motive {
+    cursor: none;
+  }
 .flip-card:hover button{
     transform: scale(1.2);
 }
@@ -166,9 +176,14 @@
   
 
 }
+.page4-top {
+    z-index: 11;
+
+}
 .carousel-container {
-    z-index:21;
+    z-index: 11;
     width: 80%;
+    height: auto;
     margin: 0 auto;
     padding: 20px;
   }
@@ -193,9 +208,24 @@ h3{
 .flip-card-front:hover h3{
     transform: scale3d(1.1, 1.1, 1.1);
 }
+.contact-me{
+    font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: #ffffff;
+  font-size: clamp(1rem, 1.3vw, 1.3rem);
+    display: flex;
+}
+.socials svg:hover{
+    transform: scale(1.2);
+color: white;
+}
 
 @media screen and (max-width: 500px){
-    
+    .socials svg{
+        font-size: 0.6rem;
+    }
    .Main{
      background-color: #4F646F;
    }

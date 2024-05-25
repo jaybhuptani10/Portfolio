@@ -25,7 +25,7 @@ const Page1 = () => {
   }, []);
 
   return (
-    <motion.div className="text-header sm:h-20 overflow-hidden z-20">
+    <motion.div className="text-header sm:h-20 overflow-hidden z-10">
       <motion.h1
         key={array[index]}
         initial="hidden"

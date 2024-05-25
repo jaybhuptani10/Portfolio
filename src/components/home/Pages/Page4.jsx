@@ -4,7 +4,7 @@ const Page4 = () => {
   return (
     <div className="flex    z-10 flex-col">
       <div className="flex  flex-col sm:flex-row items-center justify-center px-20 ">
-        <div className="page4-top  sm:px-20">
+        <div className="page4-top   sm:px-20">
           <h1 className="text-5xl font-bold ">Experience.</h1>
           <p className="mt-10 text-xl">
             As a web developer, I've explored various frameworks, languages, and
@@ -25,7 +25,7 @@ const Page4 = () => {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-2 ">
+      <div className="flex flex-col gap-2 z-10 ">
         <div className="mt-20 px-10 sm:px-40 gap-3 flex sm:gap-10">
           <div className="text-left flex   sm:gap-10 items-center">
             <h1 className="w-20">DATA SCIENCE INTERN</h1>

@@ -4,6 +4,7 @@ import Card from "./Card";
 import IMG1 from "./Images/Airbnb.png";
 import IMG2 from "./Images/Eco Eats.png";
 import IMG3 from "./Images/KuNotespedia.png";
+import IMG4 from "./Images/Jawaan.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -57,10 +58,10 @@ const Page5 = () => {
     },
     {
       Title: "Jawaan (Website)",
-      Img: IMG1,
+      Img: IMG4,
       Stack: "HTML, CSS, JavaScript, FireBase, Bootstrap, Shrey.js",
       Description:
-        "Jawaan Website serves as an exclusive Human Resource platform designed for Indian Army officers, streamlining personnel management. It provides a secure environment for officers to upload essential documents, ensuring confidentiality by restricting access to higher-ranking officials.",
+        "Jawaan Website serves as an exclusive Human Resource platform designed for Indian Army officers, streamlining personnel management. It provides a secure environment for officers to upload essential documents, ensuring confidentiality by restricting access to higher-ranking officials. id-jawan@indianarmy.com pass-indianarmy",
       link: "https://jaybhuptani10.github.io/jawan/user.auth.html",
     },
     {
@@ -81,7 +82,12 @@ const Page5 = () => {
   };
 
   return (
-    <div className=" z-20 carousel-container m-auto">
+    <div
+      data-scroll
+      data-scroll-section
+      data-scroll-speed="0.1"
+      className="  carousel-container m-auto"
+    >
       <Slider {...settings}>
         {data.map((project, index) => (
           <Card key={index} project={project} />

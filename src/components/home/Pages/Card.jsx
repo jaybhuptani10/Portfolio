@@ -14,9 +14,9 @@ const Card = ({ project }) => {
   }
 
   return (
-    <div className="flip-card w-[100%] " onClick={handleFlip}>
+    <div className="flip-card w-[100%] z-20 " onClick={handleFlip}>
       <motion.div
-        className="flip-card-inner w-[100%] h-[100%]"
+        className="flip-card-inner z-20 w-[100%] h-[100%]"
         initial={false}
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.6, animationDirection: "normal" }}
@@ -37,7 +37,7 @@ const Card = ({ project }) => {
           <p className="sm:py-10 h-60 text-center  text-black">
             {project.Description}
           </p>
-          <button className="mt-5 sm:mt-6">
+          <button className="mt-5 sm:mt-10">
             <a target="_blank" href={project.link}>
               LINK
             </a>

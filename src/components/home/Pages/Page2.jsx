@@ -2,7 +2,7 @@ import React from "react";
 
 const Page2 = () => {
   return (
-    <div className="p-10  flex-col sm:flex-row flex  gap-5">
+    <div className="p-10  flex-col sm:flex-row flex  gap-5 z-11">
       <div className="Profile-div-1  flex p-10 items-center justify-center flex-col">
         <p className=" text-r text-left w-90">
           As a third-year college student specializing in MERN stack
