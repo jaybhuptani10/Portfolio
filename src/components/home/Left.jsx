@@ -12,7 +12,7 @@ const Left = () => {
   };
   const index = 0;
   return (
-    <div className="flex left sm:py-10 flex-col dark:text-white items-center justify-between sm:justify-between fixed text-black">
+    <div className="flex left sm:py-10 flex-col dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB] dark:text-white items-center justify-between sm:justify-between fixed text-black">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

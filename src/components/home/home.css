@@ -295,6 +295,10 @@ color: white;
 .yellow{
     background-color: #F9DC5C;
 }
+.pics img{
+    position: absolute;
+    
+}
 @media screen and (max-width: 500px){
     .slider{
         top: 7px;
@@ -302,9 +306,9 @@ color: white;
     .socials svg{
         font-size: 0.6rem;
     }
-   .Main{
+   /* .Main{
      background-color: #4F646F;
-   }
+   } */
     .carousel-container{
         
         width: 72%;

@@ -203,8 +203,8 @@ const Home = () => {
       // }`}
       className={`${
         !lightMode
-          ? "Main  flex relative"
-          : "dark Main Main-light flex relative"
+          ? "Main bg-[#4F646F] sm:bg-[#1A202B]  flex relative"
+          : "dark bg-[#F1DEDC] sm:bg-[#A9E5BB]  Main  flex relative"
       } `}
     >
       <div className="left">
@@ -214,7 +214,7 @@ const Home = () => {
         <div
           id="page1"
           ref={page1Ref}
-          className="sm:p-0  inside-class min-h-screen w-full flex justify-center items-center relative dark:bg-[#EC9192]"
+          className="sm:p-0  inside-class min-h-screen w-full flex justify-center items-center relative dark:bg-[#F1DEDC]"
         >
           <div className="theme-shifter">
             <Slider setLightMode={setLightMode} />
@@ -228,7 +228,7 @@ const Home = () => {
             initial="hidden"
             animate="visible"
             ref={motiveRef}
-            className="circle motive dark:bg-[#307473]"
+            className="circle motive dark:bg-[#2E5077]"
             transition={{ ease: "easeOut", duration: 2 }}
           >
             <Page1 />
@@ -254,35 +254,35 @@ const Home = () => {
         <div
           id="page2"
           ref={page2Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#EC9192]"
+          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC]"
         >
           <Page2 />
         </div>
         <div
           id="page3"
           ref={page3Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#EC9192]"
+          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC]"
         >
           <Page3 />
         </div>
         <div
           id="page4"
           ref={page4Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#EC9192] "
+          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC] "
         >
           <Page4 />
         </div>
         <div
           id="page5"
           ref={page5Ref}
-          className="inside-class h-[60vh] sm:h-[70vh] w-full dark:bg-[#EC9192]"
+          className="inside-class h-[60vh] sm:h-[70vh] w-full dark:bg-[#F1DEDC]"
         >
           <Page5 />
         </div>
         <div
           id="page6"
           ref={page6Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#EC9192]"
+          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC]"
         >
           <Page6 />
         </div>

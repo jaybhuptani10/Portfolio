@@ -12,7 +12,7 @@ const Right = ({ navbar, setNavbar, currentPage }) => {
     setNavbar(!navbar);
   };
   return (
-    <div className="flex right    sm:py-10  flex-col h-screen text-white items-center justify-between fixed">
+    <div className="flex right dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB]   sm:py-10  flex-col h-screen text-white items-center justify-between fixed">
       {navbar ? (
         <svg
           className="w-10 h-10 cursor-pointer dark:text-black"

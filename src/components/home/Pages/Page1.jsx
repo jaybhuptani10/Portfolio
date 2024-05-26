@@ -32,7 +32,7 @@ const Page1 = () => {
         animate="visible"
         exit="hidden"
         variants={variants}
-        className="Heads text-black"
+        className="Heads text-black dark:text-white"
       >
         {array[index]}
       </motion.h1>
