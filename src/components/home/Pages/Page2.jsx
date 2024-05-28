@@ -34,7 +34,7 @@ const Page2 = () => {
         <p className="dark:text-white text-r text-left w-90">
           As a third-year college student specializing in{" "}
           <motion.span
-            className="text-green-300 text-2xl cursor-pointer uppercase font-bold relative"
+            className="text-green-300 text-l sm:text-2xl cursor-pointer uppercase font-bold relative"
             onHoverStart={() => setVisible(true)}
             onHoverEnd={() => setVisible(false)}
           >

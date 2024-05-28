@@ -5,6 +5,7 @@ import IMG1 from "./Images/Airbnb.png";
 import IMG2 from "./Images/Eco Eats.png";
 import IMG3 from "./Images/KuNotespedia.png";
 import IMG4 from "./Images/Jawaan.png";
+import IMG5 from "./Images/amazon.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -65,11 +66,12 @@ const Page5 = () => {
       link: "https://jaybhuptani10.github.io/jawan/user.auth.html",
     },
     {
-      Title: "Project 5",
-      Img: IMG1,
-      Stack: "React, NODE, MongoDB, Express",
+      Title: "AMAZON CLONE",
+      Img: IMG5,
+      Stack: "HTML,CSS",
       Description:
-        "Project 5 description. Overview of the functionalities and technologies implemented.",
+        "The Amazon Clone project replicates Amazon's homepage in a frontend design exercise. It emulates the visual layout and structure of the Amazon website, offering a practice environment for web development enthusiasts to hone their HTML, CSS, and frontend design skills by recreating the familiar Amazon interface.",
+      link: "https://jaybhuptani10.github.io/Amazon-Clone/",
     },
   ];
 
@@ -82,12 +84,7 @@ const Page5 = () => {
   };
 
   return (
-    <div
-      data-scroll
-      data-scroll-section
-      data-scroll-speed="0.1"
-      className="  carousel-container m-auto"
-    >
+    <div className="  carousel-container m-auto">
       <Slider {...settings}>
         {data.map((project, index) => (
           <Card key={index} project={project} />

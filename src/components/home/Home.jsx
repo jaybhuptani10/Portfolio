@@ -19,6 +19,7 @@ import Navbar from "../nav/Navbar";
 import { useLocation } from "react-router-dom";
 import Page6 from "./Pages/Page6";
 import Slider from "./Pages/Slider";
+import Skills from "./Pages/Skills";
 
 const Home = () => {
   const location = useLocation();
@@ -261,9 +262,9 @@ const Home = () => {
         <div
           id="page3"
           ref={page3Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC]"
+          className="inside-class h-[60vh] sm:min-h-screen w-full dark:bg-[#F1DEDC]"
         >
-          <Page3 />
+          <Skills />
         </div>
         <div
           id="page4"
@@ -275,14 +276,17 @@ const Home = () => {
         <div
           id="page5"
           ref={page5Ref}
-          className="inside-class h-[60vh] sm:h-[70vh] w-full dark:bg-[#F1DEDC]"
+          className="inside-class h-[60vh] sm:h-[90vh] w-full dark:bg-[#F1DEDC] sm:pt-20 "
         >
+          <h3 className="text-3xl sm:text-6xl text-white dark:text-black text-center ">
+            PROJECT
+          </h3>
           <Page5 />
         </div>
         <div
           id="page6"
           ref={page6Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC]"
+          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC] sm:pt-20"
         >
           <Page6 />
         </div>

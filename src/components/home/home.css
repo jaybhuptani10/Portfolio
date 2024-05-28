@@ -13,7 +13,8 @@
 }
 .inside-class{
     /* background-color: #273040; */
-    background-color: #4F646F;
+    /* background-color: #4F646F; */
+    background-color: #0A192F;
 }
 .light-mode {
     background-color: #F8E5EE;
@@ -299,8 +300,97 @@ color: white;
     position: absolute;
     
 }
+.wrapper{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.marquee{
+    cursor: pointer;
+    display: flex;
+    width: 1200px;
+    z-index:20;
+    user-select: none;
+   
+    overflow: hidden;
+    mask-image: linear-gradient(to right, hsl(0 0% 0% / 0),hsl(0 0% 0% / 1)10%,hsl(0 0% 0% / 1)90%,hsl(0 0% 0% / 0));
+
+}
+.marquee-text {
+    position: absolute;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+  
+  .item-group:hover .marquee-text {
+    
+    opacity: 1;
+  }
+.marquee-item{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    aspect-ratio: 16/9;
+    padding: 5px 20px;
+    box-shadow: rgba(99,99,99,0.2) 0px 2px 8px 0px;
+}
+.marquee-group{
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    white-space: nowrap;
+    width: 100%;
+    animation: marquee 10s linear infinite;
+}
+.marquee:hover .marquee-group {
+    animation-play-state: paused;
+  }
+.item-group{
+    display: grid;
+    place-items: center;
+    width: clamp(10rem, 1rem + 40vmin , 30rem);
+    padding: calc(clamp(10rem, 1rem + 30vmin , 30rem)/10);
+    position: relative; 
+}
+.row-2{
+    
+  
+    animation-direction: reverse;
+}
+@keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes rights {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
 @media screen and (max-width: 500px){
+    
     .slider{
+      
         top: 7px;
     }
     .socials svg{
@@ -337,7 +427,7 @@ color: white;
         z-index: 10;
         
         left: 20px;
-        background-color: #4F646F;
+        background-color: #0A192F;
       
         
     }
@@ -347,7 +437,7 @@ color: white;
     .right{
         z-index: 10;
         padding: 8px;
-        background-color: #4F646F;
+        background-color: #0A192F;
        
         right: 10px;
 
