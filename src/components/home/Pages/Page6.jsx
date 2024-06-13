@@ -49,7 +49,7 @@ const Page6 = () => {
           </h1>
           <h2 className="px-6 sm:mt-5  text-sm sm:text-xl">
             Pop me an email at <br />{" "}
-            <span className="px-20 text-white">jaybhuptani@outlook.com</span>
+            <span className="px-20 text-blue-500">jaybhuptani@outlook.com</span>
           </h2>
 
           <h2 className="px-6 text-sm sm:text-xl">or text me on my socials.</h2>

@@ -50,7 +50,7 @@ const Right = ({ navbar, setNavbar, currentPage }) => {
         </svg>
       )}
       <h2 className="right-h2 uppercase dark:text-black">{currentPage}</h2>
-      <div className="flex flex-col gap-2 cursor-pointer socials dark:text-black">
+      <div className="flex flex-col gap-2 cursor-pointer socials socials-up dark:text-black">
         <a
           target="_blank"
           href="https://www.linkedin.com/in/jay-bhuptani-566343194/"

@@ -20,7 +20,7 @@ const Left = () => {
         strokeWidth={1.5}
         stroke="currentColor"
         className="w-7 h-7  mt-6 sm:mt-0 cursor-pointer dark:text-black "
-        onClick={() => navigate("/", { state: { index } })}
+        onClick={() => navigate("/", { state: { index: 0 } })}
       >
         <path
           strokeLinecap="round"
