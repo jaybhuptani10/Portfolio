@@ -32,7 +32,7 @@ const Page2 = () => {
     <div className="p-10 flex-col sm:flex-row flex gap-5 z-11">
       <div className="Profile-div-1 dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
         <p className="dark:text-white text-r text-left w-90">
-          As a third-year college student specializing in{" "}
+          Hello! I'm Jay Bhuptani, a dedicated college student passionate about{" "}
           <motion.span
             className="text-green-300 text-l sm:text-2xl cursor-pointer uppercase font-bold relative"
             onHoverStart={() => setVisible(true)}
@@ -56,18 +56,17 @@ const Page2 = () => {
               ))}
             </motion.div>
           </motion.span>{" "}
-          development, I have crafted various projects leveraging this
-          technology stack.
+          development. I’ve crafted various projects using MongoDB, Express.js,
+          React, and Node.js, equipping me to build dynamic web applications.
+          <br /> In my free time, I enjoy watching movies and playing video
+          games.
         </p>
+
         <p className="dark:text-white text-r text-left w-90">
-          My hands-on experience with MongoDB, Express.js, React, and Node.js
-          has equipped me with the skills necessary to develop dynamic and
-          responsive web applications.
-        </p>
-        <p className="dark:text-white text-r text-left w-90">
-          Despite being in the early stages of my academic journey, I am
-          enthusiastic about further honing my expertise and contributing to
-          innovative software projects.
+          Balancing my studies and hobbies, I constantly seek to expand my
+          skills. I love collaborating on projects, learning new technologies,
+          and staying updated with tech trends. I thrive on challenges and aim
+          to contribute to innovative solutions.
         </p>
       </div>
       <div className="Profile-div-2 flex flex-col gap-5">
@@ -76,7 +75,7 @@ const Page2 = () => {
           <p className="text-xl texts font-bold dark:text-white">
             Karnavati university
           </p>
-          <p className="texts dark:text-white">
+          <p className="texts w-2/3 sm:w-full dark:text-white">
             Bachelor's Degree in Computer Science & Engineering
           </p>
           <p className="texts dark:text-white">2022-2026</p>

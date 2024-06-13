@@ -34,14 +34,6 @@ const Page5 = () => {
 
   const data = [
     {
-      Title: "Airbnb Clone",
-      Img: IMG1,
-      Stack: "React, NODE, MongoDB, Tailwindcss",
-      Description:
-        "A clone of the popular website Airbnb. This project demonstrates the full-stack development skills, including user authentication, property listings, booking functionality, and a responsive design.",
-      link: "https://airbnb-clone-1a7b7.web.app/",
-    },
-    {
       Title: "EcoEats",
       Img: IMG2,
       Stack: "React, NODE, MongoDB, Express",
