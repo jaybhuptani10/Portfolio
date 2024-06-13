@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.css";
-import { motion, transform } from "framer-motion";
+import { motion } from "framer-motion";
 import Resume from "./Jay Resume.pdf";
 import { useNavigate } from "react-router-dom";
 
@@ -10,7 +10,12 @@ const Left = () => {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0 },
   };
-  const index = 0;
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/", { state: { index: 0 } });
+  };
+
   return (
     <div className="flex left sm:py-10 flex-col dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB] dark:text-white items-center justify-between sm:justify-between fixed text-black">
       <svg
@@ -20,7 +25,7 @@ const Left = () => {
         strokeWidth={1.5}
         stroke="currentColor"
         className="w-7 h-7  mt-6 sm:mt-0 cursor-pointer dark:text-black "
-        onClick={() => navigate("/", { state: { index: 0 } })}
+        onClick={scrollToTop}
       >
         <path
           strokeLinecap="round"
