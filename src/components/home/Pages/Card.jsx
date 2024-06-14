@@ -37,7 +37,7 @@ const Card = ({ project }) => {
         </div>
 
         <div className="flip-card-back flex flex-col h-full justify-center items-center">
-          <p className="sm:py-10 h-60 text-center  text-black">
+          <p className="sm:py-2 h-60 text-center  text-black">
             {project.Description}
           </p>
           <button className="mt-5 sm:mt-10">

@@ -5,7 +5,7 @@ import IMG1 from "./Images/Airbnb.png";
 import IMG2 from "./Images/Eco Eats.png";
 import IMG3 from "./Images/KuNotespedia.png";
 import IMG4 from "./Images/Jawaan.png";
-import IMG5 from "./Images/amazon.png";
+import IMG5 from "./Images/Pass.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -58,12 +58,12 @@ const Page5 = () => {
       link: "https://jaybhuptani10.github.io/jawan/user.auth.html",
     },
     {
-      Title: "AMAZON CLONE",
+      Title: "Pass Generator",
       Img: IMG5,
-      Stack: "HTML,CSS",
+      Stack: "React ,HTML, CSS",
       Description:
-        "The Amazon Clone project replicates Amazon's homepage in a frontend design exercise. It emulates the visual layout and structure of the Amazon website, offering a practice environment for web development enthusiasts to hone their HTML, CSS, and frontend design skills by recreating the familiar Amazon interface.",
-      link: "https://jaybhuptani10.github.io/Amazon-Clone/",
+        "SecurePass is a powerful and user-friendly password generator application built using React. The project is designed to help users create strong, unique passwords that enhance online security. SecurePass aims to provide a seamless and efficient solution for generating secure passwords.",
+      link: "https://pass-generator-eight.vercel.app",
     },
   ];
 
