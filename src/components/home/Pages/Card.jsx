@@ -22,7 +22,7 @@ const Card = ({ project }) => {
 
   return (
     <div
-      className="relative w-full h-[40vh] cursor-pointer group"
+      className="relative w-full h-[50vh] sm:h-[40vh] cursor-pointer group"
       style={{ perspective: "1000px" }}
     >
       <motion.div

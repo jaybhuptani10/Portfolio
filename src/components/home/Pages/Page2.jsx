@@ -30,7 +30,7 @@ const Page2 = () => {
 
   return (
     <div className="p-10 flex-col sm:flex-row flex gap-5 z-10">
-      <div className="Profile-div-1  dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
+      <div className="Profile-div-1 h-fit dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
         <p className="dark:text-white text-r text-left w-90">
           Hello! I'm Jay Bhuptani, a full-stack web developer with a strong
           command of the{" "}

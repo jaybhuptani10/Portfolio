@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
+import { useNavigate } from "react-router-dom";
 
 const PortfolioNavbar = ({ onNavItemClick }) => {
-  const [activeSection, setActiveSection] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate
+  const [isMobile, setIsMobile] = useState(false);
+  const navigate = useNavigate();
 
   // Navigation items with their titles and corresponding sections
   const navItems = [
@@ -17,14 +16,24 @@ const PortfolioNavbar = ({ onNavItemClick }) => {
     { title: "Contact Me", id: "contact" },
   ];
 
+  // Check if the device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Listen for resize events
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -33,9 +42,6 @@ const PortfolioNavbar = ({ onNavItemClick }) => {
 
   // Handle navigation
   const handleNavigation = (id, title, index) => {
-    setActiveSection(title);
-    setMobileMenuOpen(false);
-
     // Close the parent navbar modal if the callback exists
     if (onNavItemClick) {
       onNavItemClick();
@@ -43,11 +49,6 @@ const PortfolioNavbar = ({ onNavItemClick }) => {
 
     // Navigate with state
     navigate("/", { state: { index } });
-  };
-
-  // Toggle mobile menu
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -63,62 +64,28 @@ const PortfolioNavbar = ({ onNavItemClick }) => {
             <span className="text-blue-400">Portfolio</span>
           </div>
 
-          {/* Navigation Links */}
+          {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleNavigation(item.id, item.title, index)}
-                className={`relative text-lg transition-all duration-300 ${
-                  activeSection === item.title
-                    ? "text-blue-400 font-medium"
-                    : "text-white dark:text-gray-200 hover:text-blue-300"
-                }`}
+                className="relative text-lg transition-all duration-300 text-white dark:text-gray-200 hover:text-blue-300"
               >
                 {item.title}
-                {activeSection === item.title && (
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 rounded-full transform -translate-y-1"></span>
-                )}
               </button>
             ))}
           </div>
-
-          {/* Mobile Menu Button */}
-          <div className="md:hidden">
-            <button
-              onClick={toggleMobileMenu}
-              className="text-white dark:text-gray-200 focus:outline-none"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-gray-800 dark:bg-gray-700 p-4 rounded-lg shadow-lg">
+        {/* Mobile Menu - Always visible on mobile */}
+        {isMobile && (
+          <div className="md:hidden bg-gray-800 dark:bg-gray-700 p-4 rounded-lg shadow-lg mb-4">
             {navItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleNavigation(item.id, item.title, index)}
-                className={`block w-full text-left py-2 px-4 rounded ${
-                  activeSection === item.title
-                    ? "bg-blue-500 text-white"
-                    : "text-white hover:bg-gray-700 dark:hover:bg-gray-600"
-                }`}
+                className="block w-full text-left py-2 px-4 rounded text-white hover:bg-gray-700 dark:hover:bg-gray-600"
               >
                 {item.title}
               </button>

@@ -214,7 +214,7 @@ const Home = () => {
           : "dark bg-[#F1DEDC] sm:bg-[#A9E5BB]  Main  flex relative"
       } `}
     >
-      <div className="left z-50">
+      <div className="left sm:z-50">
         <Left lightMode={lightMode} />
       </div>
       <div className="centre">
@@ -268,7 +268,7 @@ const Home = () => {
         <div
           id="page3"
           ref={page3Ref}
-          className="inside-class z-10 h-[60vh] sm:min-h-[80vh] w-full dark:bg-[#F1DEDC]"
+          className="inside-class z-10  sm:min-h-[80vh] w-full dark:bg-[#F1DEDC]"
         >
           <SkillsSection />
         </div>
@@ -282,7 +282,7 @@ const Home = () => {
         <div
           id="page5"
           ref={page5Ref}
-          className="inside-class h-[60vh] sm:h-[90vh] w-full dark:bg-[#F1DEDC] sm:pt-20 "
+          className="inside-class h-[70vh] sm:h-[90vh] w-full dark:bg-[#F1DEDC] sm:pt-20 "
         >
           <h3 className="text-3xl sm:text-6xl text-white dark:text-black text-center ">
             PROJECTS
@@ -297,7 +297,7 @@ const Home = () => {
           <Page6 />
         </div>
       </div>
-      <div className="right z-50">
+      <div className="right sm:z-50">
         <Right
           navbar={navbar}
           currentPage={currentPage}
