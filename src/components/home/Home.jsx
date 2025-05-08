@@ -9,17 +9,18 @@ import Page2 from "./Pages/Page2";
 import Page3 from "./Pages/Page3";
 import Page4 from "./Pages/Page4";
 import cursor from "./Pages/Images/cursor.png";
-import lamp from "./Pages/Images/lamp.png";
-import sun from "./Pages/Images/sun.png";
-import moon from "./Pages/Images/moon.png";
+
 import scrollingImage from "./Pages/Images/1.png";
 import closed from "./Pages/Images/closed.png";
 import Page5 from "./Pages/Page5";
-import Navbar from "../nav/Navbar";
+
 import { useLocation } from "react-router-dom";
 import Page6 from "./Pages/Page6";
 import Slider from "./Pages/Slider";
-import Skills from "./Pages/Skills";
+
+import SkillsSection from "./Pages/Page3";
+
+import PortfolioNavbar from "../nav/ModernNavbar";
 
 const Home = () => {
   const location = useLocation();
@@ -196,19 +197,24 @@ const Home = () => {
     hidden: { opacity: 0, y: 150 },
     visible: { opacity: 1, y: 0 },
   };
+
+  // Function to close the navbar when clicking outside the navbar content
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains("navbar-modal")) {
+      setNavbar(false);
+    }
+  };
+
   // Main
   return (
     <div
-      // className={`${
-      //   lightMode ? "Main Main-light flex relative" : "Main flex relative"
-      // }`}
       className={`${
         !lightMode
           ? "Main bg-[#4F646F] sm:bg-[#1A202B]  flex relative"
           : "dark bg-[#F1DEDC] sm:bg-[#A9E5BB]  Main  flex relative"
       } `}
     >
-      <div className="left">
+      <div className="left z-50">
         <Left lightMode={lightMode} />
       </div>
       <div className="centre">
@@ -246,7 +252,7 @@ const Home = () => {
 
             top: `calc(${(offsetY / maxScrollHeight) * 100}%)`, // Adjust the position based on scroll progress
             width: "200px",
-            zIndex: 1,
+            zIndex: 0,
             transition: "top 1s ease", // Smooth transition for the movement
           }}
           onClick={toggleImage} // Handle click event to toggle the image
@@ -255,21 +261,21 @@ const Home = () => {
         <div
           id="page2"
           ref={page2Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC]"
+          className="inside-class h-60vh w-full dark:bg-[#F1DEDC]"
         >
           <Page2 />
         </div>
         <div
           id="page3"
           ref={page3Ref}
-          className="inside-class h-[60vh] sm:min-h-screen w-full dark:bg-[#F1DEDC]"
+          className="inside-class z-10 h-[60vh] sm:min-h-[80vh] w-full dark:bg-[#F1DEDC]"
         >
-          <Skills />
+          <SkillsSection />
         </div>
         <div
           id="page4"
           ref={page4Ref}
-          className="inside-class min-h-screen w-full dark:bg-[#F1DEDC] "
+          className="inside-class min-h-screen z-10 w-full dark:bg-[#F1DEDC] "
         >
           <Page4 />
         </div>
@@ -279,7 +285,7 @@ const Home = () => {
           className="inside-class h-[60vh] sm:h-[90vh] w-full dark:bg-[#F1DEDC] sm:pt-20 "
         >
           <h3 className="text-3xl sm:text-6xl text-white dark:text-black text-center ">
-            PROJECT
+            PROJECTS
           </h3>
           <Page5 />
         </div>
@@ -291,14 +297,28 @@ const Home = () => {
           <Page6 />
         </div>
       </div>
-      <div className="right">
+      <div className="right z-50">
         <Right
           navbar={navbar}
           currentPage={currentPage}
           setNavbar={setNavbar}
         />
       </div>
-      {/* Custom Cursor */}
+
+      {/* Navbar at the top */}
+      {navbar && (
+        <div
+          className=" fixed top-0 left-0 w-full bg-opacity-90 z-40"
+          onClick={handleOutsideClick}
+        >
+          <div className=" p-6 shadow-lg">
+            <PortfolioNavbar
+              onNavItemClick={() => setNavbar(false)} // Close navbar after navigation
+            />
+          </div>
+        </div>
+      )}
+
       <div
         className="cursor "
         ref={cursorRef}
@@ -315,7 +335,6 @@ const Home = () => {
           display: isCursorVisible ? "block" : "none",
         }}
       ></div>
-      {/* Scrolling Image */}
     </div>
   );
 };

@@ -1,54 +1,41 @@
 import React from "react";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
+import PortfolioNavbar from "../nav/Panel"; // Import PortfolioNavbar
+
 const Right = ({ navbar, setNavbar, currentPage }) => {
   const navigate = useNavigate();
+
   const onMenuClick = () => {
-    if (navbar) {
-      navigate("/");
-    } else {
-      navigate("/Navbar");
-    }
-    setNavbar(!navbar);
+    setNavbar(!navbar); // Toggle navbar state
   };
+
   return (
-    <div className="flex right dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB]   sm:py-10  flex-col h-screen text-white items-center justify-between fixed">
-      {navbar ? (
-        <svg
-          className="w-10 h-10 cursor-pointer dark:text-black"
-          onClick={() => {
-            onMenuClick();
-          }}
-          fill="none"
-          viewBox="0 0 24 24"
-          height="1em"
-          width="1em"
-        >
-          <path
-            fill="currentColor"
-            d="M6.225 4.811a1 1 0 00-1.414 1.414L10.586 12 4.81 17.775a1 1 0 101.414 1.414L12 13.414l5.775 5.775a1 1 0 001.414-1.414L13.414 12l5.775-5.775a1 1 0 00-1.414-1.414L12 10.586 6.225 4.81z"
-          />
-        </svg>
-      ) : (
-        <svg
-          onClick={() => {
-            onMenuClick();
-          }}
-          setNav
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-10 h-10 cursor-pointer dark:text-black"
-        >
+    <div className="flex right dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB] sm:py-10 flex-col h-screen text-white items-center justify-between fixed">
+      <svg
+        onClick={onMenuClick} // Handles both opening and closing
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-10 h-10 cursor-pointer dark:text-black"
+        style={{ zIndex: 1000, position: "relative" }} // Ensure button is above the modal
+      >
+        {navbar ? (
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            d="M6 18L18 6M6 6l12 12" // Close icon
           />
-        </svg>
-      )}
+        ) : (
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" // Menu icon
+          />
+        )}
+      </svg>
       <h2 className="right-h2 uppercase dark:text-black">{currentPage}</h2>
       <div className="flex flex-col gap-2 cursor-pointer socials socials-up dark:text-black">
         <a

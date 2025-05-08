@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "../home.css";
+import { ExternalLink, Code, ArrowRight } from "lucide-react";
 
 const Card = ({ project }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -13,38 +13,116 @@ const Card = ({ project }) => {
     }
   }
 
+  const cardVariants = {
+    front: { rotateY: 0 },
+    back: { rotateY: 180 },
+  };
+
+  const stackItems = project.Stack.split(", ");
+
   return (
     <div
-      className="flip-card w-[100%] dark:bg-[#2E5077]  z-20 "
-      onClick={handleFlip}
+      className="relative w-full h-[40vh] cursor-pointer group"
+      style={{ perspective: "1000px" }}
     >
       <motion.div
-        className="flip-card-inner  z-20 w-[100%] h-[100%]"
+        className="relative w-full h-full rounded-xl shadow-lg transition-shadow duration-300 group-hover:shadow-xl"
+        style={{ transformStyle: "preserve-3d" }}
         initial={false}
-        animate={{ rotateY: isFlipped ? 180 : 0 }}
-        transition={{ duration: 0.6, animationDirection: "normal" }}
+        animate={isFlipped ? "back" : "front"}
+        variants={cardVariants}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
         onAnimationComplete={() => setIsAnimating(false)}
+        onClick={handleFlip}
       >
-        <div className="flip-card-front flex flex-col items-center">
-          <img src={project.Img} alt={project.Title} />
-          <h3 className="mt-2 sm:px-0 px-5 h-10 sm:h-12 text-xl dark:text-white">
-            {project.Title}
-          </h3>
-          <p className="mt-4 text-center h-20 dark:text-white  p-2 text-black">
-            Stack: {project.Stack}
-          </p>
-          <button className="mt-4">Know More</button>
+        {/* Front Card */}
+        <div
+          className="absolute w-full h-full rounded-xl overflow-hidden flex flex-col bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700"
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="h-48 overflow-hidden relative">
+            <div className="absolute top-4 right-4 z-10 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+              {project.Category || "Project"}
+            </div>
+            <img
+              src={project.Img}
+              alt={project.Title}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
+
+          <div className="p-5 flex flex-col flex-grow">
+            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+              {project.Title}
+            </h3>
+
+            <div className="flex flex-wrap gap-2 mt-2 mb-4">
+              {stackItems.slice(0, 3).map((tech, index) => (
+                <span
+                  key={index}
+                  className="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
+                >
+                  {tech.trim()}
+                </span>
+              ))}
+              {stackItems.length > 3 && (
+                <span className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+                  +{stackItems.length - 3}
+                </span>
+              )}
+            </div>
+
+            <div className="mt-auto flex items-center text-blue-500 font-medium">
+              <span>Know More</span>
+              <ArrowRight size={16} className="ml-1" />
+            </div>
+          </div>
         </div>
 
-        <div className="flip-card-back flex flex-col h-full justify-center items-center">
-          <p className="sm:py-2 h-60 text-center  text-black">
-            {project.Description}
-          </p>
-          <button className="mt-5 sm:mt-10">
-            <a target="_blank" href={project.link}>
-              LINK
-            </a>
-          </button>
+        {/* Back Card */}
+        <div
+          className="absolute w-full h-full rounded-xl overflow-hidden p-6 flex flex-col bg-gradient-to-br from-blue-500 to-blue-700 text-white"
+          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+        >
+          <h3 className="text-xl font-bold mb-4">{project.Title}</h3>
+
+          <div className="flex-grow overflow-auto mb-4 pr-2">
+            <p className="text-white opacity-90 leading-relaxed">
+              {project.Description}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            {stackItems.map((tech, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 text-xs rounded-full bg-white bg-opacity-20 text-white"
+              >
+                {tech.trim()}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex justify-between mt-auto pt-2 border-t border-white border-opacity-20">
+            {project.github && (
+              <button className="flex items-center justify-center px-4 py-2 rounded-md bg-white bg-opacity-10 hover:bg-opacity-20 transition-colors">
+                <Code size={16} className="mr-2" />
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Source
+                </a>
+              </button>
+            )}
+            <button className="flex items-center justify-center px-4 py-2 rounded-md bg-white text-blue-700 hover:bg-opacity-90 transition-colors ml-auto">
+              <ExternalLink size={16} className="mr-2" />
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                Live Demo
+              </a>
+            </button>
+          </div>
         </div>
       </motion.div>
     </div>

@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import "../home.css";
 import Card from "./Card";
 import IMG1 from "./Images/Airbnb.png";
+import cinevault from "./Images/cinevault.png";
+import elderly from "./Images/Elderly.png";
+import uptodate from "./Images/uptodate.png";
+import eco from "./Images/eco.png";
 import IMG2 from "./Images/Eco Eats.png";
 import IMG3 from "./Images/KuNotespedia.png";
 import IMG4 from "./Images/Jawaan.png";
@@ -34,9 +38,33 @@ const Page5 = () => {
 
   const data = [
     {
-      Title: "EcoEats",
+      Title: "Elderly Health Monitoring System",
+      Img: elderly,
+      Stack: "MERN Stack, ML, Python,  ESP-32 ",
+      Description:
+        "Developed a health monitoring system utilizing IoT sensors to collect vitals in real-time. The system employs machine learning algorithms to analyze the data and provide alerts for any abnormalities. The project is designed to enhance the well-being of elderly individuals by ensuring timely medical attention.",
+      link: "https://health-tracker-one-orcin.vercel.app ",
+    },
+    {
+      Title: "UptoDate Dating App",
+      Img: uptodate,
+      Stack: "React Native, MERN Stack, ML, AWS, Web Sockets  ",
+      Description:
+        "A dating application that utilizes machine learning algorithms to analyze user preferences and behavior, providing personalized matches. The app is built using React Native for cross-platform compatibility and employs AWS for backend services. It also incorporates web sockets for real-time chat functionality, enhancing user engagement.",
+      link: "https://upto-date.vercel.app/ ",
+    },
+    {
+      Title: "CinemaVault ",
+      Img: cinevault,
+      Stack: "MERN Stack ",
+      Description:
+        "Developed a web application to efficiently manage and organize movies and TV shows, providing users with personalized recommendations and seamless content tracking. ",
+      link: "hhttps://cinevaultt.vercel.app/",
+    },
+    {
+      Title: "WASTE MANAGEMENT WEB APPLICATION ",
       Img: IMG2,
-      Stack: "React, NODE, MongoDB, Express",
+      Stack: " MERN Stack ",
       Description:
         "A web application focusing on efficient waste management. Features user management, waste tracking, reporting capabilities, and a mobile-friendly interface.",
       link: "https://eco-eats-delta.vercel.app",
@@ -60,7 +88,7 @@ const Page5 = () => {
     {
       Title: "Pass Generator",
       Img: IMG5,
-      Stack: "React ,HTML, CSS",
+      Stack: "React",
       Description:
         "SecurePass is a powerful and user-friendly password generator application built using React. The project is designed to help users create strong, unique passwords that enhance online security. SecurePass aims to provide a seamless and efficient solution for generating secure passwords.",
       link: "https://pass-generator-eight.vercel.app",

@@ -1,13 +1,13 @@
 import React from "react";
-import html from "./Images/html.png";
-import mongodb from "./Images/mongodb-icon.png";
-import react from "./Images/react.png";
-import js from "./Images/js.png";
-import node from "./Images/node.png";
+
+// import mongodb from "./Images/mongodb-icon.png";
+// import react from "./Images/react.png";
+// import js from "./Images/js.png";
+// import node from "./Images/node.png";
 import { delay, motion } from "framer-motion";
 
 const Page2 = () => {
-  const images = [mongodb, js, react, , node];
+  // const images = [mongodb, js, react, , node];
   const [visible, setVisible] = React.useState(false);
 
   const containerVariants = {
@@ -29,12 +29,13 @@ const Page2 = () => {
   };
 
   return (
-    <div className="p-10 flex-col sm:flex-row flex gap-5 z-11">
-      <div className="Profile-div-1 dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
+    <div className="p-10 flex-col sm:flex-row flex gap-5 z-10">
+      <div className="Profile-div-1  dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
         <p className="dark:text-white text-r text-left w-90">
-          Hello! I'm Jay Bhuptani, a dedicated college student passionate about{" "}
+          Hello! I'm Jay Bhuptani, a full-stack web developer with a strong
+          command of the{" "}
           <motion.span
-            className="text-green-300 text-l sm:text-2xl cursor-pointer uppercase font-bold relative"
+            className="text-blue-600 text-l sm:text-2xl cursor-pointer uppercase font-bold relative"
             onHoverStart={() => setVisible(true)}
             onHoverEnd={() => setVisible(false)}
           >
@@ -45,7 +46,7 @@ const Page2 = () => {
               initial="hidden"
               animate={visible ? "visible" : "hidden"}
             >
-              {images.map((img, index) => (
+              {/* {images.map((img, index) => (
                 <motion.img
                   transition={{ duration: 0.2, delay: 0.2 * index }}
                   className="w-10 h-10 object-cover object-center"
@@ -53,20 +54,21 @@ const Page2 = () => {
                   key={index}
                   variants={bounceVariants}
                 />
-              ))}
+              ))} */}
             </motion.div>
           </motion.span>{" "}
-          development. I’ve crafted various projects using MongoDB, Express.js,
-          React, and Node.js, equipping me to build dynamic web applications.
-          <br /> In my free time, I enjoy watching movies and playing video
-          games.
+          development. I’ve built and deployed dynamic web applications and
+          contributed to impactful projects like Forecastic, a traffic
+          prediction model. I was the winner of Code Unnati Smart Innovation
+          Marathon 3.0, shortlisted for the Smart India Hackathon, and
+          co-founded the Muse Community to empower tech learners.
         </p>
 
         <p className="dark:text-white text-r text-left w-90">
-          Balancing my studies and hobbies, I constantly seek to expand my
-          skills. I love collaborating on projects, learning new technologies,
-          and staying updated with tech trends. I thrive on challenges and aim
-          to contribute to innovative solutions.
+          My portfolio spans AI-powered assistants, IoT health dashboards, and a
+          matchmaking app. I actively engage in hackathons and coding
+          competitions. Beyond tech, I enjoy movies and video games, constantly
+          seeking growth through innovation and collaboration.
         </p>
       </div>
       <div className="Profile-div-2 flex flex-col gap-5">
@@ -80,7 +82,7 @@ const Page2 = () => {
           </p>
           <p className="texts dark:text-white">2022-2026</p>
         </div>
-        <div className="boxes dark:bg-[#611C35] flex flex-col p-10 justify-center">
+        <div className="boxes dark:bg-[#611C35] flex flex-col p-10 justify-center gap-5">
           <h2 className="text-2xl texts dark:text-white">CONTACT DETAILS</h2>
           <p className="flex items-center gap-2 texts dark:text-white">
             <svg
@@ -99,7 +101,7 @@ const Page2 = () => {
             </svg>
             jaybhuptani1054@gmail.com
           </p>
-          <p className="flex items-center gap-2 texts dark:text-white">
+          {/* <p className="flex items-center gap-2 texts dark:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -115,7 +117,7 @@ const Page2 = () => {
               />
             </svg>
             8141242093
-          </p>
+          </p> */}
           <p className="flex items-center gap-2 texts dark:text-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"

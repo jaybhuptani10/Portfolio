@@ -10,7 +10,7 @@ const Slider = ({ setLightMode }) => {
 
   return (
     <div
-      className="slider"
+      className="slider cursor-pointer"
       style={{ backgroundColor: theme === "light" ? "#3e3e3f" : "#F9DC5C" }}
       onClick={changeTheme}
     >
