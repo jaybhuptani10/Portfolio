@@ -32,36 +32,17 @@ const Page2 = () => {
     <div className="p-10 flex-col sm:flex-row flex gap-5 z-10">
       <div className="Profile-div-1 h-fit dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
         <p className="dark:text-white text-r text-left w-90">
-          Hello! I'm Jay Bhuptani, a full-stack web developer with a strong
-          command of the{" "}
-          <motion.span
-            className="text-blue-600 text-l sm:text-2xl cursor-pointer uppercase font-bold relative"
-            onHoverStart={() => setVisible(true)}
-            onHoverEnd={() => setVisible(false)}
-          >
-            MERN stack
-            <motion.div
-              className="absolute top-full left-0 mt-2 flex gap-2"
-              variants={containerVariants}
-              initial="hidden"
-              animate={visible ? "visible" : "hidden"}
-            >
-              {/* {images.map((img, index) => (
-                <motion.img
-                  transition={{ duration: 0.2, delay: 0.2 * index }}
-                  className="w-10 h-10 object-cover object-center"
-                  src={img}
-                  key={index}
-                  variants={bounceVariants}
-                />
-              ))} */}
-            </motion.div>
-          </motion.span>{" "}
-          development. I’ve built and deployed dynamic web applications and
-          contributed to impactful projects like Forecastic, a traffic
-          prediction model. I was the winner of Code Unnati Smart Innovation
-          Marathon 3.0, shortlisted for the Smart India Hackathon, and
-          co-founded the Muse Community to empower tech learners.
+          I am a Computer Science & Engineering undergraduate (B.Tech, 2026) and
+          a Full Stack Developer with experience building scalable web and
+          mobile applications using the MERN stack, React Native, AWS, and
+          machine learning. I currently work as a Full Stack Developer at
+          Adiance Technologies and have previously interned at ISRO – Space
+          Applications Centre, where I developed WebGIS platforms for
+          large-scale satellite data visualization. I enjoy solving real-world
+          problems through clean architecture, data-driven systems, and
+          performance-focused engineering. I am also the author of a
+          peer-reviewed research paper on NLP-based matchmaking systems and an
+          active contributor to tech communities.
         </p>
 
         <p className="dark:text-white text-r text-left w-90">
