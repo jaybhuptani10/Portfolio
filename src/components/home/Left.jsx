@@ -1,7 +1,5 @@
-import React from "react";
 import "./home.css";
 import { motion } from "framer-motion";
-import Resume from "./Jay Resume.pdf";
 import { useNavigate } from "react-router-dom";
 
 const Left = () => {
@@ -17,7 +15,7 @@ const Left = () => {
   };
 
   return (
-    <div className="flex left sm:py-10 flex-col dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB] dark:text-white items-center justify-between sm:justify-between fixed text-black">
+    <div className="flex left sm:py-10 flex-col dark:bg-[#F1DEDC] sm:dark:bg-[#F1DEDC] dark:text-white items-center justify-between sm:justify-between fixed text-black">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -47,8 +45,9 @@ const Left = () => {
       >
         <a
           className="Resume dark:text-black"
-          href={Resume}
-          download="Jay Resume.pdf"
+          href="/Jay_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           RESUME
         </a>

@@ -1,7 +1,6 @@
 import React from "react";
 import "./home.css";
 import { useNavigate } from "react-router-dom";
-import PortfolioNavbar from "../nav/Panel"; // Import PortfolioNavbar
 
 const Right = ({ navbar, setNavbar, currentPage }) => {
   const navigate = useNavigate();
@@ -11,7 +10,7 @@ const Right = ({ navbar, setNavbar, currentPage }) => {
   };
 
   return (
-    <div className="flex right dark:bg-[#F1DEDC] sm:dark:bg-[#A9E5BB] sm:py-10 flex-col h-screen text-white items-center justify-between fixed">
+    <div className="flex right dark:bg-[#F1DEDC] sm:dark:bg-[#F1DEDC] sm:py-10 flex-col h-screen text-white items-center justify-between fixed">
       <svg
         onClick={onMenuClick} // Handles both opening and closing
         xmlns="http://www.w3.org/2000/svg"

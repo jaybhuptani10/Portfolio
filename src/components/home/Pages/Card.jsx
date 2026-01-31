@@ -1,132 +1,113 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Code, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowUpRight, Layers } from "lucide-react";
+import PropTypes from "prop-types";
 
 const Card = ({ project }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  const [isAnimating, setIsAnimating] = useState(false);
-
-  function handleFlip() {
-    if (!isAnimating) {
-      setIsFlipped(!isFlipped);
-      setIsAnimating(true);
-    }
-  }
-
-  const cardVariants = {
-    front: { rotateY: 0 },
-    back: { rotateY: 180 },
-  };
-
-  const stackItems = project.Stack.split(", ");
+  const stackItems = project.Stack ? project.Stack.split(", ") : [];
 
   return (
-    <div
-      className="relative w-full h-[50vh] sm:h-[40vh] cursor-pointer group"
-      style={{ perspective: "1000px" }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="group relative flex flex-col h-full bg-[#0F1624] dark:bg-white border border-gray-800 dark:border-gray-200 rounded-2xl overflow-hidden hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
     >
-      <motion.div
-        className="relative w-full h-full rounded-xl shadow-lg transition-shadow duration-300 group-hover:shadow-xl"
-        style={{ transformStyle: "preserve-3d" }}
-        initial={false}
-        animate={isFlipped ? "back" : "front"}
-        variants={cardVariants}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        onAnimationComplete={() => setIsAnimating(false)}
-        onClick={handleFlip}
-      >
-        {/* Front Card */}
-        <div
-          className="absolute w-full h-full rounded-xl overflow-hidden flex flex-col bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700"
-          style={{ backfaceVisibility: "hidden" }}
-        >
-          <div className="h-48 overflow-hidden relative">
-            <div className="absolute top-4 right-4 z-10 bg-blue-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-              {project.Category || "Project"}
-            </div>
-            <img
-              src={project.Img}
-              alt={project.Title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-            />
-          </div>
+      {/* Image Container */}
+      <div className="relative h-48 sm:h-56 overflow-hidden">
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+        <img
+          src={project.Img}
+          alt={project.Title}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+        />
 
-          <div className="p-5 flex flex-col flex-grow">
-            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
-              {project.Title}
-            </h3>
+        {/* Overlay Links */}
+        <div className="absolute top-4 right-4 z-20 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-blue-600 transition-colors"
+              title="View Source"
+            >
+              <Github size={18} />
+            </a>
+          )}
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 bg-black/50 backdrop-blur-md rounded-full text-white hover:bg-blue-600 transition-colors"
+            title="Live Demo"
+          >
+            <ExternalLink size={18} />
+          </a>
+        </div>
+      </div>
 
-            <div className="flex flex-wrap gap-2 mt-2 mb-4">
-              {stackItems.slice(0, 3).map((tech, index) => (
-                <span
-                  key={index}
-                  className="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                >
-                  {tech.trim()}
-                </span>
-              ))}
-              {stackItems.length > 3 && (
-                <span className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
-                  +{stackItems.length - 3}
-                </span>
-              )}
-            </div>
-
-            <div className="mt-auto flex items-center text-blue-500 font-medium">
-              <span>Know More</span>
-              <ArrowRight size={16} className="ml-1" />
-            </div>
-          </div>
+      {/* Content Container */}
+      <div className="flex flex-col flex-grow p-6">
+        <div className="mb-4">
+          <h3 className="text-xl font-bold text-gray-100 dark:text-gray-900 group-hover:text-blue-400 transition-colors mb-2">
+            {project.Title}
+          </h3>
+          <div className="h-1 w-12 bg-blue-500 rounded-full mb-3 group-hover:w-20 transition-all duration-300" />
+          <p className="text-gray-400 dark:text-gray-900 text-sm leading-relaxed mb-4">
+            {project.Description}
+          </p>
         </div>
 
-        {/* Back Card */}
-        <div
-          className="absolute w-full h-full rounded-xl overflow-hidden p-6 flex flex-col bg-gradient-to-br from-blue-500 to-blue-700 text-white"
-          style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
-        >
-          <h3 className="text-xl font-bold mb-4">{project.Title}</h3>
-
-          <div className="flex-grow overflow-auto mb-4 pr-2">
-            <p className="text-white opacity-90 leading-relaxed">
-              {project.Description}
-            </p>
+        {/* Tech Stack */}
+        <div className="mt-auto">
+          <div className="flex items-center gap-2 mb-3 text-gray-400 dark:text-gray-500 text-xs font-semibold uppercase tracking-wider">
+            <Layers size={14} className="text-blue-500" />
+            <span>Tech Stack</span>
           </div>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            {stackItems.map((tech, index) => (
+          <div className="flex flex-wrap gap-2">
+            {stackItems.slice(0, 4).map((tech, index) => (
               <span
                 key={index}
-                className="px-2 py-1 text-xs rounded-full bg-white bg-opacity-20 text-white"
+                className="px-2.5 py-1 text-xs font-medium rounded-full bg-blue-500/10 text-blue-300 dark:text-blue-700 border border-blue-500/20 dark:border-blue-200"
               >
                 {tech.trim()}
               </span>
             ))}
-          </div>
-
-          <div className="flex justify-between mt-auto pt-2 border-t border-white border-opacity-20">
-            {project.github && (
-              <button className="flex items-center justify-center px-4 py-2 rounded-md bg-white bg-opacity-10 hover:bg-opacity-20 transition-colors">
-                <Code size={16} className="mr-2" />
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Source
-                </a>
-              </button>
+            {stackItems.length > 4 && (
+              <span className="px-2.5 py-1 text-xs font-medium rounded-full bg-gray-800 dark:bg-gray-100 text-gray-400 dark:text-gray-600 border border-gray-700 dark:border-gray-200">
+                +{stackItems.length - 4}
+              </span>
             )}
-            <button className="flex items-center justify-center px-4 py-2 rounded-md bg-white text-blue-700 hover:bg-opacity-90 transition-colors ml-auto">
-              <ExternalLink size={16} className="mr-2" />
-              <a href={project.link} target="_blank" rel="noopener noreferrer">
-                Live Demo
-              </a>
-            </button>
           </div>
         </div>
-      </motion.div>
-    </div>
+
+        {/* Call to Action - Mobile only mostly, but nice to have */}
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 flex items-center text-sm font-semibold text-blue-400 group-hover:text-blue-300 transition-colors"
+        >
+          View Project{" "}
+          <ArrowUpRight
+            size={16}
+            className="ml-1 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+          />
+        </a>
+      </div>
+    </motion.div>
   );
+};
+
+Card.propTypes = {
+  project: PropTypes.shape({
+    Stack: PropTypes.string,
+    Img: PropTypes.string,
+    Title: PropTypes.string,
+    github: PropTypes.string,
+    link: PropTypes.string,
+    Description: PropTypes.string,
+  }).isRequired,
 };
 
 export default Card;

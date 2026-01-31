@@ -24,8 +24,8 @@ h2{
   font-weight: 700;
   font-family:'Courier New', Courier, monospace;
 }
-svg{
- color: #BCAA99;;
+svg {
+  color: #BCAA99;
 }
 p
 {
@@ -35,6 +35,10 @@ p
   color: #E5EAFA;
   font-style: normal;
   font-size: clamp(15px, 1vw, 1rem);
+}
+
+.dark p {
+  color: #1a202b;
 }
 .text-header{
  
@@ -47,8 +51,16 @@ p
 h1{
   color: #E5EAFA;
 }
+
+.dark h1 {
+  color: #1a202b;
+}
 H2{
   color: #BCAA99;
+}
+
+.dark H2 {
+  color: #1a202b;
 }
 button{
   font-family: "Montserrat", sans-serif;
@@ -63,4 +75,9 @@ button{
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.dark button {
+  color: #ffffff;
+  background-color: #1a202b;
 }

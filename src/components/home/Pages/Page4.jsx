@@ -1,7 +1,20 @@
 import React from "react";
+import { RevealOnScroll } from "../../utils/Reveal";
 
 const Page4 = () => {
   const experiences = [
+    {
+      role: "FULL STACK INTERN",
+      company: "Adiance Technologies",
+      duration: "Dec 2025 – Present",
+      type: "Internship",
+      achievements: [
+        "Developed a high-conversion landing platform featuring adaptive responsive layouts, consistently capturing 10+ organic business leads daily.",
+        "Orchestrated a comprehensive testing suite for camera hardware APIs, ensuring 99% stability for real-time video streaming modules.",
+        "Overhauled backend API response cycles, achieving a 30% increase in deployment velocity and significantly reducing system latency.",
+      ],
+      gradient: "from-indigo-500 to-cyan-600",
+    },
     {
       role: "SPACE RESEARCH INTERN",
       company: "Space Applications Centre - ISRO",
@@ -62,17 +75,21 @@ const Page4 = () => {
       <div className="container mx-auto py-16 px-4 sm:px-6 md:px-8 lg:px-12">
         {/* Header section */}
         <div className="text-center mb-20">
-          <div className="inline-block">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent mb-6">
-              Experience
-            </h1>
-            <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-          </div>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 dark:text-gray-800 mt-8 max-w-4xl mx-auto leading-relaxed">
-            As a passionate developer, I continuously explore diverse
-            frameworks, languages, and technologies to sharpen my craft and
-            deliver impactful digital experiences.
-          </p>
+          <RevealOnScroll>
+            <div className="inline-block">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent mb-6">
+                Experience
+              </h1>
+              <div className="h-1 w-32 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+            </div>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.2}>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-300 dark:text-gray-900 mt-8 max-w-4xl mx-auto leading-relaxed">
+              As a passionate developer, I continuously explore diverse
+              frameworks, languages, and technologies to sharpen my craft and
+              deliver impactful digital experiences.
+            </p>
+          </RevealOnScroll>
         </div>
 
         {/* Experience Timeline */}
@@ -88,7 +105,7 @@ const Page4 = () => {
               } flex flex-col md:flex md:items-center`}
             >
               {/* Timeline dot */}
-              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-white dark:bg-gray-800 border-4 border-purple-500 rounded-full z-10 shadow-lg"></div>
+              <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gray-800 dark:bg-white border-4 border-purple-500 rounded-full z-10 shadow-lg"></div>
 
               {/* Content */}
               <div
@@ -96,66 +113,68 @@ const Page4 = () => {
                   index % 2 === 0 ? "md:pr-12" : "md:pl-12"
                 }`}
               >
-                <div className="group relative">
-                  {/* Card */}
-                  <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 dark:border-gray-700 hover:border-transparent hover:scale-[1.02]">
-                    {/* Gradient header */}
-                    <div
-                      className={`h-2 bg-gradient-to-r ${exp.gradient}`}
-                    ></div>
+                <RevealOnScroll delay={index * 0.1}>
+                  <div className="group relative">
+                    {/* Card */}
+                    <div className="bg-gray-800 dark:bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-700 dark:border-gray-200 hover:border-transparent hover:scale-[1.02]">
+                      {/* Gradient header */}
+                      <div
+                        className={`h-2 bg-gradient-to-r ${exp.gradient}`}
+                      ></div>
 
-                    <div className="p-8">
-                      {/* Role badge */}
-                      <div className="flex items-center justify-between mb-4">
-                        <span
-                          className={`px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${exp.gradient} shadow-lg`}
+                      <div className="p-8">
+                        {/* Role badge */}
+                        <div className="flex items-center justify-between mb-4">
+                          <span
+                            className={`px-4 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r ${exp.gradient} shadow-lg`}
+                          >
+                            {exp.type}
+                          </span>
+                          <div className="text-sm text-gray-400 dark:text-gray-600 font-medium">
+                            {exp.duration}
+                          </div>
+                        </div>
+
+                        {/* Title */}
+                        <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-gray-900 mb-2">
+                          {exp.role}
+                        </h3>
+
+                        {/* Company */}
+                        <h4
+                          className={`text-lg font-semibold bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent mb-6`}
                         >
-                          {exp.type}
-                        </span>
-                        <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                          {exp.duration}
+                          {exp.company}
+                        </h4>
+
+                        {/* Achievements */}
+                        <div className="space-y-3">
+                          {exp.achievements.map((achievement, achIndex) => (
+                            <div
+                              key={achIndex}
+                              className="flex items-start gap-3"
+                            >
+                              <div
+                                className={`w-2 h-2 rounded-full bg-gradient-to-r ${exp.gradient} mt-2 flex-shrink-0`}
+                              ></div>
+                              <p className="text-gray-300 dark:text-gray-900 leading-relaxed">
+                                {achievement}
+                              </p>
+                            </div>
+                          ))}
                         </div>
                       </div>
-
-                      {/* Title */}
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                        {exp.role}
-                      </h3>
-
-                      {/* Company */}
-                      <h4
-                        className={`text-lg font-semibold bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent mb-6`}
-                      >
-                        {exp.company}
-                      </h4>
-
-                      {/* Achievements */}
-                      <div className="space-y-3">
-                        {exp.achievements.map((achievement, achIndex) => (
-                          <div
-                            key={achIndex}
-                            className="flex items-start gap-3"
-                          >
-                            <div
-                              className={`w-2 h-2 rounded-full bg-gradient-to-r ${exp.gradient} mt-2 flex-shrink-0`}
-                            ></div>
-                            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                              {achievement}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
                     </div>
-                  </div>
 
-                  {/* Decorative elements */}
-                  <div
-                    className={`absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r ${exp.gradient} rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
-                  ></div>
-                  <div
-                    className={`absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r ${exp.gradient} rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
-                  ></div>
-                </div>
+                    {/* Decorative elements */}
+                    <div
+                      className={`absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r ${exp.gradient} rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
+                    ></div>
+                    <div
+                      className={`absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r ${exp.gradient} rounded-full opacity-10 group-hover:opacity-20 transition-opacity duration-500`}
+                    ></div>
+                  </div>
+                </RevealOnScroll>
               </div>
 
               {/* Spacer for the other side */}

@@ -1,121 +1,178 @@
 import React from "react";
-
-// import mongodb from "./Images/mongodb-icon.png";
-// import react from "./Images/react.png";
-// import js from "./Images/js.png";
-// import node from "./Images/node.png";
-import { delay, motion } from "framer-motion";
+import {
+  GraduationCap,
+  MapPin,
+  Mail,
+  CircuitBoard,
+  Gamepad2,
+  Clapperboard,
+  Brain,
+} from "lucide-react";
+import { RevealOnScroll } from "../../utils/Reveal"; // Adjust path if necessary
 
 const Page2 = () => {
-  // const images = [mongodb, js, react, , node];
-  const [visible, setVisible] = React.useState(false);
-
-  const containerVariants = {
-    hidden: { opacity: 1 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const bounceVariants = {
-    hidden: { y: 0, opacity: 0 },
-    visible: {
-      y: [-100],
-      opacity: 1,
-    },
-  };
-
   return (
-    <div className="p-10 flex-col sm:flex-row flex gap-5 z-10">
-      <div className="Profile-div-1 h-fit dark:bg-[#2E5077] flex p-10 items-center justify-center flex-col">
-        <p className="dark:text-white text-r text-left w-90">
-          I am a Computer Science & Engineering undergraduate (B.Tech, 2026) and
-          a Full Stack Developer with experience building scalable web and
-          mobile applications using the MERN stack, React Native, AWS, and
-          machine learning. I currently work as a Full Stack Developer at
-          Adiance Technologies and have previously interned at ISRO – Space
-          Applications Centre, where I developed WebGIS platforms for
-          large-scale satellite data visualization. I enjoy solving real-world
-          problems through clean architecture, data-driven systems, and
-          performance-focused engineering. I am also the author of a
-          peer-reviewed research paper on NLP-based matchmaking systems and an
-          active contributor to tech communities.
-        </p>
+    <div className="w-full min-h-screen py-20 bg-transparent flex justify-center items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          {/* Main Biography Section - Spans 7 columns */}
+          <div className="lg:col-span-7">
+            <RevealOnScroll delay={0.2} className="h-full">
+              <div className="bg-[#0F1624]/60 dark:bg-white/80 backdrop-blur-md border border-gray-700/50 dark:border-gray-200 rounded-3xl p-8 hover:border-gray-600 dark:hover:border-blue-300 transition-all duration-300 shadow-2xl h-full">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 dark:from-blue-600 dark:to-purple-600 bg-clip-text text-transparent mb-6">
+                  About Me
+                </h2>
+                <div className="space-y-4 text-gray-300 dark:text-gray-900 leading-relaxed text-lg">
+                  <p>
+                    I am a{" "}
+                    <strong className="text-white dark:text-gray-900">
+                      Computer Science & Engineering undergraduate
+                    </strong>{" "}
+                    with a passion for building scalable digital solutions. My
+                    journey involves everything from full-stack web development
+                    to exploring the frontiers of{" "}
+                    <strong className="text-white dark:text-gray-900">
+                      Machine Learning
+                    </strong>{" "}
+                    and{" "}
+                    <strong className="text-white dark:text-gray-900">
+                      IoT
+                    </strong>
+                    .
+                  </p>
+                  <p>
+                    Currently, I work as a{" "}
+                    <strong className="text-white dark:text-gray-900">
+                      Full Stack Developer
+                    </strong>{" "}
+                    at Adiance Technologies, where I architect high-performance
+                    platforms. Previously, I had the privilege of interning at{" "}
+                    <strong className="text-white dark:text-gray-900">
+                      ISRO
+                    </strong>
+                    , contributing to satellite data visualization tools that
+                    impact real-world analysis.
+                  </p>
+                  <p>
+                    Beyond code, I am a researcher—having published a paper on
+                    NLP-based matchmaking—and an active community leader. I
+                    believe in clean code, data-driven decisions, and the power
+                    of collaboration.
+                  </p>
+                </div>
 
-        <p className="dark:text-white text-r text-left w-90">
-          My portfolio spans AI-powered assistants, IoT health dashboards, and a
-          matchmaking app. I actively engage in hackathons and coding
-          competitions. Beyond tech, I enjoy movies and video games, constantly
-          seeking growth through innovation and collaboration.
-        </p>
-      </div>
-      <div className="Profile-div-2 flex flex-col gap-5">
-        <div className="boxes dark:bg-[#611C35] flex flex-col p-10 justify-center">
-          <h2 className="text-2xl texts dark:text-white">EDUCATION</h2>
-          <p className="text-xl texts font-bold dark:text-white">
-            Karnavati university
-          </p>
-          <p className="texts w-2/3 sm:w-full dark:text-white">
-            Bachelor's Degree in Computer Science & Engineering
-          </p>
-          <p className="texts dark:text-white">2022-2026</p>
-        </div>
-        <div className="boxes dark:bg-[#611C35] flex flex-col p-10 justify-center gap-5">
-          <h2 className="text-2xl texts dark:text-white">CONTACT DETAILS</h2>
-          <p className="flex items-center gap-2 texts dark:text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 text-black dark:text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-              />
-            </svg>
-            jaybhuptani1054@gmail.com
-          </p>
-          {/* <p className="flex items-center gap-2 texts dark:text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 text-black dark:text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
-              />
-            </svg>
-            8141242093
-          </p> */}
-          <p className="flex items-center gap-2 texts dark:text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-6 h-6 text-black dark:text-white"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-              />
-            </svg>
-            Ahmedabad, Gujarat, India
-          </p>
+                <div className="mt-8 pt-8 border-t border-gray-700/50 dark:border-gray-400">
+                  <h3 className="text-sm font-semibold text-gray-400 dark:text-gray-900 uppercase tracking-wider mb-4">
+                    Interests & Hobbies
+                  </h3>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 rounded-full bg-blue-500/10 text-blue-300 dark:text-blue-800 text-sm font-medium border border-blue-500/20 dark:border-blue-300 flex items-center gap-2">
+                      <Brain size={16} /> AI Research
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-purple-500/10 text-purple-300 dark:text-purple-800 text-sm font-medium border border-purple-500/20 dark:border-purple-300 flex items-center gap-2">
+                      <Gamepad2 size={16} /> Gaming
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-pink-500/10 text-pink-300 dark:text-pink-800 text-sm font-medium border border-pink-500/20 dark:border-pink-300 flex items-center gap-2">
+                      <Clapperboard size={16} /> Movies
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-green-500/10 text-green-300 dark:text-green-800 text-sm font-medium border border-green-500/20 dark:border-green-300 flex items-center gap-2">
+                      <CircuitBoard size={16} /> IoT Tinker
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+
+          {/* Right Aside Section - Spans 5 columns */}
+          <div className="lg:col-span-5 space-y-6">
+            {/* Education Card */}
+            <RevealOnScroll delay={0.4}>
+              <div className="bg-[#1A202B] dark:bg-white rounded-3xl p-6 border-l-4 border-blue-500 shadow-xl dark:shadow-sm">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400 dark:text-blue-600">
+                    <GraduationCap size={24} />
+                  </div>
+                  <h3 className="text-xl font-bold text-white dark:text-gray-900">
+                    Education
+                  </h3>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-200 dark:text-gray-800">
+                    Bachelor of Technology
+                  </h4>
+                  <p className="text-gray-400 dark:text-gray-600">
+                    Computer Science & Engineering
+                  </p>
+                  <div className="flex justify-between items-center mt-2">
+                    <span className="text-blue-400 dark:text-blue-600 font-medium">
+                      Karnavati University
+                    </span>
+                    <span className="text-sm text-gray-500 bg-gray-800 dark:bg-gray-100 dark:text-gray-800 px-2 py-1 rounded">
+                      2022 - 2026
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            {/* Contact Card */}
+            <RevealOnScroll delay={0.5}>
+              <div className="bg-[#1A202B] dark:bg-white rounded-3xl p-6 border-l-4 border-purple-500 shadow-xl dark:shadow-sm">
+                <h3 className="text-xl font-bold text-white dark:text-gray-900 mb-6">
+                  Contact Details
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-100 flex items-center justify-center flex-shrink-0">
+                      <Mail
+                        size={18}
+                        className="text-purple-400 dark:text-purple-600"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400 dark:text-gray-700">
+                        Email
+                      </p>
+                      <a
+                        href="mailto:jaybhuptani1054@gmail.com"
+                        className="text-sm md:text-base text-gray-200 dark:text-gray-800 hover:text-purple-400 dark:hover:text-purple-600 transition-colors"
+                      >
+                        jaybhuptani1054@gmail.com
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-10 h-10 rounded-full bg-gray-800 dark:bg-gray-100 flex items-center justify-center flex-shrink-0">
+                      <MapPin
+                        size={18}
+                        className="text-purple-400 dark:text-purple-600"
+                      />
+                    </div>
+                    <div>
+                      <p className="text-xs text-gray-400 dark:text-gray-700">
+                        Location
+                      </p>
+                      <p className="text-sm md:text-base text-gray-200 dark:text-gray-900">
+                        Ahmedabad, Gujarat, India
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </RevealOnScroll>
+
+            {/* Quote / Stat Card (Optional filler for balance) */}
+            <RevealOnScroll delay={0.6}>
+              <div className="bg-gradient-to-br from-blue-900/40 to-purple-900/40 dark:from-blue-100 dark:to-purple-100 border border-white/10 dark:border-blue-200 rounded-3xl p-6 text-center shadow-lg dark:shadow-sm">
+                <p className="text-gray-300 dark:text-gray-900 italic font-semibold">
+                  "Innovating at the intersection of Hardware, Software, and
+                  Intelligence."
+                </p>
+              </div>
+            </RevealOnScroll>
+          </div>
         </div>
       </div>
     </div>
