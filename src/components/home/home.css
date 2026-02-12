@@ -418,8 +418,8 @@ h3 {
     width: 83vw;
   }
 }
-/* Scroll Snap Logic */
-html {
+/* Scroll Snap Logic - Disabled for Lenis Smooth Scroll */
+/* html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -427,4 +427,4 @@ html {
 .inside-class {
   scroll-snap-align: start;
   scroll-snap-stop: always;
-}
+} */
