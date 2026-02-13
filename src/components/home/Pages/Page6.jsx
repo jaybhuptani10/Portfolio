@@ -198,12 +198,12 @@ const Page6 = () => {
         </div>
 
         {/* Right Image Section */}
-        <div className="w-full lg:w-2/5 h-[500px] lg:h-auto relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
-          <RevealOnScroll delay={0.4} className="h-full">
-            <div className="h-full relative">
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0F1624] via-transparent to-transparent z-10 pointer-events-none"></div>
+        <div className="w-full lg:w-2/5 min-h-[500px] lg:min-h-[700px] relative rounded-2xl overflow-hidden shadow-2xl border border-gray-800 dark:border-gray-300">
+          <RevealOnScroll delay={0.4} className="absolute inset-0">
+            <div className="absolute inset-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0F1624]/80 dark:from-white/80 via-transparent to-transparent z-10 pointer-events-none"></div>
               <motion.div
-                className="w-full h-full"
+                className="absolute inset-0"
                 key={index}
                 initial="hidden"
                 animate="visible"
@@ -213,15 +213,15 @@ const Page6 = () => {
                 <img
                   src={array[index]}
                   alt="Profile"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
               </motion.div>
 
               <div className="absolute bottom-8 left-8 right-8 z-20">
-                <h2 className="text-4xl font-bold text-white mb-2">
+                <h2 className="text-4xl font-bold text-white dark:text-gray-900 mb-2 drop-shadow-lg">
                   Jay Bhuptani
                 </h2>
-                <p className="text-blue-400 font-medium text-lg">
+                <p className="text-blue-400 dark:text-blue-600 font-medium text-lg">
                   Full Stack Developer
                 </p>
               </div>

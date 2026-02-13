@@ -25,6 +25,9 @@ const SmoothScroll = ({ children }) => {
 
     lenisRef.current = lenis;
 
+    // Add lenis class to HTML element
+    document.documentElement.classList.add("lenis");
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -46,6 +49,7 @@ const SmoothScroll = ({ children }) => {
     return () => {
       lenis.destroy();
       document.removeEventListener("click", handleAnchorClick);
+      document.documentElement.classList.remove("lenis");
       lenisRef.current = null;
     };
   }, []);
