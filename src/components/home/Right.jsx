@@ -9,8 +9,9 @@ const Right = ({ navbar, setNavbar, currentPage }) => {
 
   return (
     <div className="flex right dark:bg-[#F1DEDC] sm:dark:bg-[#F1DEDC] sm:py-10 flex-col h-screen text-white items-center justify-between fixed">
-      <MagneticButton className="z-[1001] relative">
-        <svg
+      <div className="mt-4 sm:mt-0 z-[1001] relative">
+        <MagneticButton>
+          <svg
           onClick={onMenuClick} // Handles both opening and closing
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -34,10 +35,11 @@ const Right = ({ navbar, setNavbar, currentPage }) => {
           )}
         </svg>
       </MagneticButton>
+      </div>
 
-      <h2 className="right-h2 uppercase dark:text-black">{currentPage}</h2>
+      <h2 className="right-h2 uppercase dark:text-black hidden sm:block">{currentPage}</h2>
 
-      <div className="flex flex-col gap-2 cursor-pointer socials socials-up dark:text-black">
+      <div className="hidden sm:flex flex-col gap-2 cursor-pointer socials socials-up dark:text-black">
         <MagneticButton>
           <a
             target="_blank"

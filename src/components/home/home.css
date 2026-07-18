@@ -370,9 +370,6 @@ h3 {
   .socials-up {
     padding: 20px 0;
   }
-  /* .Main{
-     background-color: #4F646F;
-   } */
   .carousel-container {
     width: 72%;
     margin: 0 0px;
@@ -393,21 +390,23 @@ h3 {
     min-height: 100vh;
   }
   .left {
+    position: absolute;
+    width: auto;
     height: 100%;
-    z-index: 10;
-
-    left: 20px;
-    background-color: #0a192f;
+    z-index: 50;
+    left: 10px;
+    background-color: transparent;
   }
   .Left-h1 {
     display: none;
   }
   .right {
-    z-index: 10;
-    padding: 8px;
-    background-color: #0a192f;
-
+    position: absolute;
+    width: auto;
+    height: 100%;
+    z-index: 50;
     right: 10px;
+    background-color: transparent;
   }
   .Profile-div-1 {
     height: clamp(30vh, 40vw, 45vh);

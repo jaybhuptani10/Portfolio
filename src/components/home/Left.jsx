@@ -41,7 +41,7 @@ const Left = () => {
         initial="hidden"
         animate="visible"
         transition={{ ease: "easeOut", duration: 2, delay: 0.5 }}
-        className="cursor-pointer mb-5 sm:mb-0 "
+        className="cursor-pointer mb-5 sm:mb-0 hidden sm:block"
       >
         <a
           className="Resume dark:text-black"
